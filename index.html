@@ -120,11 +120,9 @@
     .hphone.main { width: 248px; align-self: flex-start; margin-top: 0; }
     .hphone.side { width: 214px; opacity: 0.65; }
     .hphone.side2 { width: 214px; opacity: 0.65; }
-    .h-notch {
-      height: 26px; width: 88px; background: #111; border-radius: 0 0 18px 18px;
-      position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 10;
-    }
-    .h-status { display: flex; justify-content: space-between; padding: 32px 14px 4px; font-size: 10px; font-weight: 700; color: #111; }
+    .h-status { display: flex; justify-content: space-between; align-items: center; padding: 8px 14px 6px; font-size: 11px; font-weight: 700; color: #111; position: relative; min-height: 36px; }
+    .h-island { position: absolute; left: 50%; transform: translateX(-50%); width: 90px; height: 26px; background: #111; border-radius: 20px; pointer-events: none; }
+    .h-icons { display: flex; align-items: center; gap: 3px; }
 
     /* Feed screen */
     .feed-screen { background: #fff; flex: 1; overflow: hidden; }
@@ -160,6 +158,21 @@
 
     /* Club screen */
     .club-screen { background: #fff; flex: 1; overflow: hidden; }
+    /* Fan-out club cards */
+    /* Shared fan-out card base */
+    .club-fan-card, .creator-fan-card {
+      position: absolute; width: 150px; background: #fff;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,.14);
+      z-index: 1; pointer-events: none;
+      opacity: 0;
+    }
+    /* Club fan positions */
+    .club-fan-left  { left: -20px; transform: rotate(-12deg) translateX(-60px) translateY(20px); transform-origin: bottom right; }
+    .club-fan-right { right: -20px; transform: rotate(12deg) translateX(60px) translateY(20px); transform-origin: bottom left; }
+    /* Creator fan positions */
+    .creator-fan-left  { left: -20px; transform: rotate(-10deg) translateX(-60px) translateY(20px); transform-origin: bottom right; }
+    .creator-fan-right { right: -20px; transform: rotate(10deg) translateX(60px) translateY(20px); transform-origin: bottom left; }
     .club-banner-img { width: 100%; height: 90px; object-fit: cover; display: block; }
     .club-header { padding: 10px 12px 8px; position: relative; }
     .club-av { width: 48px; height: 48px; border-radius: 12px; object-fit: cover; border: 3px solid #fff; position: absolute; top: -24px; left: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
@@ -208,9 +221,9 @@
     .pnav-btn.active-btn .pnav-dot { opacity: 1; }
     .pnav-btn.active-btn .pnav-svg { color: #111; }
     .pnav-plus-btn {
-      width: 40px; height: 40px; background: var(--grad); border-radius: 13px;
+      width: 44px; height: 44px; background: var(--grad); border-radius: 50%;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(25,168,49,.35);
+      box-shadow: 0 4px 14px rgba(25,168,49,.4);
     }
     .pnav-plus-btn svg { width: 18px; height: 18px; color: #fff; }
 
@@ -252,7 +265,7 @@
     .cc-earn { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 700; color: var(--g1); background: rgba(0,0,0,.4); border-radius: 20px; padding: 3px 8px; margin-top: 6px; }
 
     /* ─── SECTIONS ─── */
-    .section { padding: 72px 64px; }
+    .section { padding: 60px 64px; }
     .section.bg-off { background: var(--off); }
     .section.bg-black { background: var(--black); color: #fff; }
     .section-inner { max-width: 1280px; margin: 0 auto; }
@@ -330,25 +343,12 @@
     .hiw-card { background: #fff; border: 1.5px solid #eee; border-radius: 20px; padding: 30px 24px; transition: all .3s; }
     .hiw-card:hover { border-color: #bbf7d0; box-shadow: 0 8px 24px rgba(25,168,49,.08); transform: translateY(-4px); }
     .hiw-num { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
-    .hiw-icon { font-size: 36px; margin-bottom: 14px; }
     .hiw-title { font-size: 16px; font-weight: 800; color: var(--black); margin-bottom: 8px; }
     .hiw-desc { font-size: 13px; color: var(--gray); line-height: 1.65; }
 
-    /* ─── QUOTE ─── */
-    .quote-wrap { max-width: 800px; margin: 0 auto; text-align: center; }
-    .qmark { font-size: 80px; line-height: .6; color: var(--g2); opacity: .35; margin-bottom: 16px; }
-    blockquote { font-size: clamp(18px,2vw,26px); font-weight: 600; line-height: 1.55; color: var(--black); margin-bottom: 28px; }
-    .qauthor { display: flex; align-items: center; justify-content: center; gap: 14px; }
-    .qav { width: 52px; height: 52px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; font-size: 22px; color: #fff; overflow: hidden; }
-    .qav img { width: 100%; height: 100%; object-fit: cover; }
-    .qname { font-size: 16px; font-weight: 800; color: var(--black); text-align: left; }
-    .qrole { font-size: 12px; color: var(--gray); text-align: left; }
+    /* [removed dead CSS] */
 
-    /* ─── BACKERS ─── */
-    .backers-row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 44px; }
-    .backer {
-      display: flex; align-items: center; gap: 12px; padding: 16px 26px;
-      background: #fff; border: 1.5px solid #eee; border-radius: 14px; transition: all .2s;
+    /* [removed dead CSS] */
     }
     .backer:hover { border-color: #bbf7d0; box-shadow: 0 4px 20px rgba(25,168,49,.12); transform: translateY(-2px); }
     .backer-ico {
@@ -361,24 +361,7 @@
 
     /* ─── COMP TABLE mobile ─── */
     /* ─── 1024px tablet ─── */
-    @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; padding-top: 80px; }
-      .hero-right { display: none; }
-      .hero-left { text-align: center; }
-      .hero h1 { font-size: clamp(40px, 8vw, 58px); }
-      .hero-sub { max-width: 100%; }
-      .hero-btns { justify-content: center; }
-      .hero-proof { justify-content: center; }
-      .feat-row { grid-template-columns: 1fr; gap: 48px; }
-      .feat-row.flip { direction: ltr; }
-      .bento-grid { grid-template-columns: repeat(2, 1fr); }
-      .bento-span2 { grid-column: span 2; }
-    }
-
-    @media (max-width: 768px) {
-      .comp-table table { font-size: 12px; }
-      .comp-table table th, .comp-table table td { padding: 10px 8px; }
-    }
+    /* [duplicate media queries consolidated below] */
 
     /* ─── CTA SECTION ─── */
     .cta-section { background: var(--black); padding: 100px 64px; text-align: center; }
@@ -465,8 +448,8 @@
     .bento-card:hover { border-color: #bbf7d0; box-shadow: 0 12px 40px rgba(25,168,49,.12); transform: translateY(-3px); transition: all .25s cubic-bezier(.23,1,.32,1); }
     .bento-preview {
       background: linear-gradient(135deg, #f8fbf8 0%, #f0faf2 100%); border-bottom: 1px solid #eef5ee;
-      padding: 24px 24px 0; min-height: 150px;
-      display: flex; align-items: flex-end; justify-content: center;
+      padding: 24px; min-height: 150px;
+      display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
     }
     .bento-card-body { padding: 20px 24px 24px; }
@@ -645,9 +628,9 @@
     <div class="hero-badge"><span></span> The ONLY creator platform with no follower minimum</div>
     <h1>Any Creator.<br><em>Any Audience Size.</em><br>Real Money.</h1>
     <div style="display:inline-flex;align-items:center;gap:8px;background:#f0fff4;border:1.5px solid #bbf7d0;border-radius:10px;padding:8px 16px;margin-bottom:16px;font-size:13px;font-weight:700;color:var(--g3);">✓ No follower minimum &nbsp;·&nbsp; ✓ Free to join &nbsp;·&nbsp; ✓ Earn from Day 1</div>
-    <p class="hero-sub">Monetize your content, community, and brand deals in one place — no follower minimum required. From subscriptions to brand campaigns to your own digital shop, Follow'd helps any creator earn from day one. You keep 90%.</p>
+    <p class="hero-sub">Monetize your content, community, and brand deals in one place. From subscriptions to brand campaigns to your own digital shop, Follow'd helps any creator earn from day one. You keep 90%.</p>
     <div class="hero-btns">
-      <a href="#cta" class="btn-hero-main">Join Free — No Follower Minimum →</a>
+      <a href="#cta" class="btn-hero-main">Join Free, No Follower Minimum →</a>
       <a href="#feed" class="btn-hero-sec">See the Feed</a>
     </div>
     <div class="hero-proof">
@@ -658,20 +641,19 @@
         <div class="proof-face"><img loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=64&h=64&fit=crop&crop=face" alt="Follow'd creator" /></div>
         <div class="proof-face"><img loading="lazy" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=64&h=64&fit=crop&crop=face" alt="Follow'd creator" /></div>
       </div>
-      <div class="proof-text"><strong>50,000+</strong> creators already earning — <strong>free to join</strong></div>
+      <div class="proof-text"><strong>50,000+</strong> creators already earning · <strong>free to join</strong></div>
     </div>
   </div>
 
   <div class="hero-right">
     <!-- Side phone left: Creator Profile -->
     <div class="hphone side" style="align-self:flex-start; margin-top:40px;">
-      <div class="h-notch"></div>
-      <div class="h-status"><span>9:41</span><span>●●</span></div>
+      <div class="h-status"><span>9:38</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
       <div class="creator-screen">
-        <img loading="lazy" class="creator-banner" src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=500&h=200&fit=crop" alt="Creator banner" />
+        <img loading="lazy" class="creator-banner" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=200&fit=crop" alt="Creator banner" />
         <div class="creator-info" style="position:relative;">
           <img loading="lazy" class="creator-av" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&h=120&fit=crop&crop=face" alt="av" />
-          <div class="creator-name">Mia Wellness</div>
+          <div class="creator-name">Mia Carter</div>
           <div class="creator-bio">Fitness · Lifestyle · Nutrition 🌿 Earn while you inspire</div>
           <div class="creator-stats">
             <div><div class="cstat-val">84.2k</div><div class="cstat-lbl">Followers</div></div>
@@ -722,8 +704,7 @@
 
     <!-- Main center phone: Feed -->
     <div class="hphone main">
-      <div class="h-notch"></div>
-      <div class="h-status"><span>9:41</span><span>⚡ $18.51</span></div>
+      <div class="h-status"><span>9:41</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
       <div class="feed-screen">
         <div class="feed-topbar">
           <div class="feed-logo">Follow'd</div>
@@ -734,56 +715,56 @@
         </div>
         <div class="stories-row">
           <div class="story">
-            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop&crop=face" alt="" /></div>
-            <span>mia_w</span>
+            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt="" /></div>
+            <span>nia.williams</span>
           </div>
           <div class="story">
-            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="" /></div>
-            <span>carlos</span>
+            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&crop=face" alt="" /></div>
+            <span>priya</span>
           </div>
           <div class="story">
-            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=80&h=80&fit=crop&crop=face" alt="" /></div>
-            <span>jade</span>
+            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&h=80&fit=crop&crop=face" alt="" /></div>
+            <span>leo</span>
           </div>
           <div class="story">
-            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=80&h=80&fit=crop&crop=face" alt="" /></div>
-            <span>alex</span>
+            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="" /></div>
+            <span>sam</span>
           </div>
         </div>
         <!-- Post 1 -->
         <div class="feed-post">
           <div class="post-top">
-            <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=60&h=60&fit=crop&crop=face" alt="" /></div>
+            <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop&crop=face" alt="" /></div>
             <div class="post-meta">
-              <div class="post-author">Mia Wellness</div>
-              <div class="post-club">🌿 Fitness Club · <span class="post-time">2h ago</span></div>
+              <div class="post-author">Nia Williams</div>
+              <div class="post-club">🏃 Run Club · <span class="post-time">2h ago</span></div>
             </div>
             <span style="font-size:15px;color:#ccc;">···</span>
           </div>
-          <div class="post-img"><img loading="lazy" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop" alt="fitness post" /></div>
-          <div class="post-caption">My morning routine changed everything 💪 Full guide in my Club ↗</div>
+          <div class="post-img"><img loading="lazy" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=500&h=300&fit=crop" alt="fitness post" /></div>
+          <div class="post-caption">Race day PB ✅ My training plan is in the Club 🏃‍♀️</div>
           <div class="post-actions">
             <span class="pact">♡ 36.3k</span>
             <span class="pact">💬 1.2k</span>
             <span class="pact">↗ Share</span>
-            <span class="earn-pill">+$2.00 earned</span>
+            <span class="earn-pill">+$32 earned</span>
           </div>
         </div>
         <!-- Post 2 -->
         <div class="feed-post">
           <div class="post-top">
-            <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&crop=face" alt="" /></div>
+            <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=60&h=60&fit=crop&crop=face" alt="" /></div>
             <div class="post-meta">
-              <div class="post-author">Jade Creates</div>
+              <div class="post-author">Priya Sharma</div>
               <div class="post-club">🎨 Art Studio · <span class="post-time">4h ago</span></div>
             </div>
           </div>
           <div class="post-img"><img loading="lazy" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop" alt="art post" /></div>
-          <div class="post-caption">New digital art drop — only 50 editions 🎨✨</div>
+          <div class="post-caption">New digital art drop, only 50 editions 🎨✨</div>
           <div class="post-actions">
             <span class="pact">♡ 12.8k</span>
             <span class="pact">💬 480</span>
-            <span class="earn-pill">+$1.50 earned</span>
+            <span class="earn-pill">+$18 earned</span>
           </div>
         </div>
       </div>
@@ -817,10 +798,9 @@
 
     <!-- Side phone right: Clubs -->
     <div class="hphone side2" style="align-self:flex-start; margin-top:80px;">
-      <div class="h-notch"></div>
-      <div class="h-status"><span>9:41</span><span>●●</span></div>
+      <div class="h-status"><span>10:14</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
       <div class="club-screen">
-        <img loading="lazy" class="club-banner-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=200&fit=crop" alt="club banner" />
+        <img loading="lazy" class="club-banner-img" src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=500&h=200&fit=crop" alt="club banner" />
         <div class="club-header" style="position:relative;">
           <img loading="lazy" class="club-av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="" />
           <div class="club-join-btn">+ Join</div>
@@ -835,7 +815,7 @@
         <div class="club-post-card">
           <div class="cpcard-top">
             <div class="cpcard-av"><img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop&crop=face" alt="" /></div>
-            <div><div class="cpcard-name">Jade Creates</div><div class="cpcard-time">2h ago</div></div>
+            <div><div class="cpcard-name">Jade Kim</div><div class="cpcard-time">2h ago</div></div>
           </div>
           <div class="cpcard-img"><img loading="lazy" src="https://images.unsplash.com/photo-1508614999368-9260051292e5?w=400&h=200&fit=crop" alt="" /></div>
           <div class="cpcard-text">Behind the scenes of my new collection 🖌️</div>
@@ -887,7 +867,7 @@
     <div class="creator-card">
       <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
-        <div class="cc-name">Mia Wellness</div>
+        <div class="cc-name">Mia Carter</div>
         <div class="cc-followers">84.2K followers</div>
         <div class="cc-earn">⚡ $4.8k/mo</div>
       </div>
@@ -895,7 +875,7 @@
     <div class="creator-card">
       <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
-        <div class="cc-name">Carlos Beats</div>
+        <div class="cc-name">Carlos Rivera</div>
         <div class="cc-followers">210K followers</div>
         <div class="cc-earn">⚡ $9.2k/mo</div>
       </div>
@@ -903,7 +883,7 @@
     <div class="creator-card">
       <img loading="lazy" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
-        <div class="cc-name">Jade Creates</div>
+        <div class="cc-name">Jade Kim</div>
         <div class="cc-followers">65K followers</div>
         <div class="cc-earn">⚡ $3.1k/mo</div>
       </div>
@@ -911,7 +891,7 @@
     <div class="creator-card">
       <img loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
-        <div class="cc-name">Alex Gaming</div>
+        <div class="cc-name">Alex Torres</div>
         <div class="cc-followers">1.2M followers</div>
         <div class="cc-earn">⚡ $18k/mo</div>
       </div>
@@ -919,15 +899,15 @@
     <div class="creator-card">
       <img loading="lazy" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
-        <div class="cc-name">Sofia Style</div>
+        <div class="cc-name">Sofia Rivera</div>
         <div class="cc-followers">320K followers</div>
         <div class="cc-earn">⚡ $11k/mo</div>
       </div>
     </div>
     <div class="creator-card">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=560&fit=crop&crop=top" alt="creator" />
+      <img loading="lazy" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
-        <div class="cc-name">David Fitness</div>
+        <div class="cc-name">David Park</div>
         <div class="cc-followers">540K followers</div>
         <div class="cc-earn">⚡ $7.6k/mo</div>
       </div>
@@ -936,7 +916,7 @@
 </div>
 
 <!-- ══════════════ TESTIMONIALS ══════════════ -->
-<div class="section bg-off" style="padding:80px 64px;">
+<div class="section bg-off">
   <div class="section-inner">
     <div style="text-align:center;margin-bottom:48px;" class="reveal">
       <div class="section-chip">Creator Stories</div>
@@ -947,7 +927,7 @@
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
           <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop&crop=face" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
           <div>
-            <div style="font-size:15px;font-weight:800;color:#111;">Mia Wellness</div>
+            <div style="font-size:15px;font-weight:800;color:#111;">Mia Carter</div>
             <div style="font-size:12px;color:var(--g2);font-weight:600;">Fitness · 84K followers</div>
           </div>
           <div style="margin-left:auto;text-align:right;">
@@ -962,7 +942,7 @@
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
           <img loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=face" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
           <div>
-            <div style="font-size:15px;font-weight:800;color:#111;">Alex Gaming</div>
+            <div style="font-size:15px;font-weight:800;color:#111;">Alex Torres</div>
             <div style="font-size:12px;color:var(--g2);font-weight:600;">Gaming · 1.2M followers</div>
           </div>
           <div style="margin-left:auto;text-align:right;">
@@ -977,7 +957,7 @@
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
           <img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
           <div>
-            <div style="font-size:15px;font-weight:800;color:#111;">Jade Creates</div>
+            <div style="font-size:15px;font-weight:800;color:#111;">Jade Kim</div>
             <div style="font-size:12px;color:var(--g2);font-weight:600;">Art · 65K followers</div>
           </div>
           <div style="margin-left:auto;text-align:right;">
@@ -1000,19 +980,19 @@
       <div class="reveal-left">
         <div class="section-chip">The Feed</div>
         <h2 class="sh">A social feed where<br>every post <em>earns</em></h2>
-        <p class="section-desc">Follow your favourite creators and earn real cash while you do it. Brand-sponsored tasks reward likes, shares, and posts. Exclusive gated posts earn from subscriptions. It's one feed — two revenue streams working together.</p>
+        <p class="section-desc">Follow your favourite creators and earn real cash while you do it. Brand-sponsored tasks reward likes, shares, and posts. Exclusive gated posts earn from subscriptions. One feed, two revenue streams working together.</p>
         <ul class="check-list" style="margin-top:28px;">
           <li>
             <div class="ch-icon">📱</div>
-            <div><div class="ch-title">Unified creator feed</div><div class="ch-desc">Every creator you follow — their free posts, exclusive drops, and club content — in one scrollable home feed</div></div>
+            <div><div class="ch-title">Unified creator feed</div><div class="ch-desc">Every creator you follow: free posts, exclusive drops, and club content in one scrollable home feed</div></div>
           </li>
           <li>
             <div class="ch-icon">💰</div>
-            <div><div class="ch-title">Earn on every action</div><div class="ch-desc">Likes, shares, comments, and posts earn real dollars — credited directly to your balance. Fans earn too</div></div>
+            <div><div class="ch-title">Earn on every action</div><div class="ch-desc">Likes, shares, comments, and posts earn real dollars, credited directly to your balance. Fans earn too</div></div>
           </li>
           <li>
             <div class="ch-icon">🔒</div>
-            <div><div class="ch-title">Gated content in-feed</div><div class="ch-desc">Locked posts appear inline — fans unlock with one tap and creators see instant revenue</div></div>
+            <div><div class="ch-title">Gated content in-feed</div><div class="ch-desc">Locked posts appear inline. Fans unlock with one tap and creators see instant revenue</div></div>
           </li>
         </ul>
       </div>
@@ -1022,8 +1002,7 @@
 
         <!-- Phone mockup -->
         <div class="hphone" style="max-width:230px;width:100%;margin:0 auto;">
-          <div class="h-notch"></div>
-          <div class="h-status"><span>9:41</span><span>⚡ $24.82</span></div>
+          <div class="h-status"><span>11:27</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
           <div class="feed-screen">
             <div class="feed-topbar">
               <div class="feed-logo">Follow'd</div>
@@ -1031,15 +1010,15 @@
             </div>
             <div class="stories-row">
               <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face" alt="" /></div><span>sofia</span></div>
-              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="" /></div><span>david</span></div>
-              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="" /></div><span>jade</span></div>
-              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="" /></div><span>carlos</span></div>
+              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=80&h=80&fit=crop&crop=face" alt="" /></div><span>david</span></div>
+              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&h=80&fit=crop&crop=face" alt="" /></div><span>luna</span></div>
+              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1552058812-6b0a05f3e671?w=80&h=80&fit=crop&crop=face" alt="" /></div><span>omar</span></div>
             </div>
             <div class="feed-post">
               <div class="post-top">
                 <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=60&h=60&fit=crop&crop=face" alt="" /></div>
                 <div class="post-meta">
-                  <div class="post-author">Sofia Style</div>
+                  <div class="post-author">Sofia Rivera</div>
                   <div class="post-club">👗 Fashion Club · <span class="post-time">1h ago</span></div>
                 </div>
               </div>
@@ -1047,14 +1026,14 @@
               <div class="post-caption">Spring collection is HERE ☀️ Linked in my shop!</div>
               <div class="post-actions">
                 <span class="pact">♡ 58.2k</span><span class="pact">💬 3.4k</span><span class="pact">↗</span>
-                <span class="earn-pill">+$3.50 earned</span>
+                <span class="earn-pill">+$24 earned</span>
               </div>
             </div>
             <div class="feed-post">
               <div class="post-top">
-                <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="" /></div>
+                <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=60&h=60&fit=crop&crop=face" alt="" /></div>
                 <div class="post-meta">
-                  <div class="post-author">David Fitness</div>
+                  <div class="post-author">David Park</div>
                   <div class="post-club">💪 Fitness Club · <span class="post-time">3h ago</span></div>
                 </div>
               </div>
@@ -1062,7 +1041,7 @@
               <div class="post-caption">5am club 🌅 Who else? Full workout plan below 👇</div>
               <div class="post-actions">
                 <span class="pact">♡ 21.9k</span><span class="pact">💬 890</span>
-                <span class="earn-pill">+$1.00 earned</span>
+                <span class="earn-pill">+$15 earned</span>
               </div>
             </div>
           </div>
@@ -1095,16 +1074,16 @@
             <img loading="lazy" class="fside-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=280&fit=crop" alt="post" />
             <div class="fside-card-body">
               <div class="fside-card-header">
-                <img loading="lazy" class="fside-av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=68&h=68&fit=crop&crop=face" alt="" />
+                <img loading="lazy" class="fside-av" src="https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?w=68&h=68&fit=crop&crop=face" alt="" />
                 <div>
-                  <div class="fside-name">Jade Creates</div>
+                  <div class="fside-name">Zara Ahmed</div>
                   <div class="fside-club">🎨 Art Studio Club</div>
                 </div>
               </div>
-              <div class="fside-text">My digital brush pack finally dropped — grab it before it sells out ✨</div>
+              <div class="fside-text">My digital brush pack finally dropped. Grab it before it sells out ✨</div>
               <div class="fside-footer">
                 <div class="fside-stats"><span>♡ 12.8k</span><span>💬 480</span></div>
-                <div class="fside-earn">+$2.50 earned</div>
+                <div class="fside-earn">+$21 earned</div>
               </div>
             </div>
           </div>
@@ -1112,16 +1091,16 @@
             <img loading="lazy" class="fside-card-img" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=280&fit=crop" alt="gaming post" />
             <div class="fside-card-body">
               <div class="fside-card-header">
-                <img loading="lazy" class="fside-av" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=68&h=68&fit=crop&crop=face" alt="" />
+                <img loading="lazy" class="fside-av" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=68&h=68&fit=crop&crop=face" alt="" />
                 <div>
-                  <div class="fside-name">Alex Gaming</div>
-                  <div class="fside-club">🎮 Gaming Culture</div>
+                  <div class="fside-name">Kai Nakamura</div>
+                  <div class="fside-club">🎮 Esports Dojo</div>
                 </div>
               </div>
               <div class="fside-text">Just hit rank 1 in the tourney 🏆 full breakdown post up now</div>
               <div class="fside-footer">
                 <div class="fside-stats"><span>♡ 94.1k</span><span>💬 7.2k</span></div>
-                <div class="fside-earn">+$5.00 earned</div>
+                <div class="fside-earn">+$17 earned</div>
               </div>
             </div>
           </div>
@@ -1139,7 +1118,7 @@
       <div class="reveal-right">
         <div class="section-chip">Clubs</div>
         <h2 class="sh">Your community.<br><em>Your terms.</em></h2>
-        <p class="section-desc">Build a Club around any interest. Post exclusive content, run a shop, offer memberships — and earn while your community grows.</p>
+        <p class="section-desc">Build a Club around any interest. Post exclusive content, run a shop, offer memberships, and earn while your community grows.</p>
         <ul class="check-list">
           <li>
             <div class="ch-icon">📌</div>
@@ -1147,46 +1126,74 @@
           </li>
           <li>
             <div class="ch-icon">🔒</div>
-            <div><div class="ch-title">Lock content for subscribers</div><div class="ch-desc">Members-only posts unlock behind a subscription — you set the price, keep the revenue</div></div>
+            <div><div class="ch-title">Lock content for subscribers</div><div class="ch-desc">Members-only posts unlock behind a subscription. You set the price and keep the revenue</div></div>
           </li>
           <li>
             <div class="ch-icon">💸</div>
-            <div><div class="ch-title">$100 milestone bonus</div><div class="ch-desc">Hit 100 members and pocket a $100 bonus — more milestones unlock bigger rewards</div></div>
+            <div><div class="ch-title">$100 milestone bonus</div><div class="ch-desc">Hit 100 members and pocket a $100 bonus. More milestones unlock bigger rewards</div></div>
           </li>
         </ul>
       </div>
-      <div class="feat-phone reveal-left">
-        <div class="hphone" style="max-width:260px;width:100%;">
-          <div class="h-notch"></div>
-          <div class="h-status"><span>9:41</span><span>●●</span></div>
-          <div class="club-screen">
-            <img loading="lazy" class="club-banner-img" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=250&fit=crop" alt="club banner" />
-            <div class="club-header" style="position:relative;">
-              <img loading="lazy" class="club-av" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop&crop=face" alt="" />
+      <div class="feat-phone reveal-left" style="position:relative;display:flex;align-items:center;justify-content:center;">
+
+        <!-- Fan-left club card -->
+        <div class="club-fan-card club-fan-left" id="clubFanLeft">
+          <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=260&h=160&fit=crop" style="width:100%;height:100px;object-fit:cover;display:block;" />
+          <div style="padding:10px 12px;">
+            <div style="font-size:10px;font-weight:800;color:#111;margin-bottom:2px;">Gaming Squad</div>
+            <div style="font-size:9px;color:#888;margin-bottom:8px;">3.1k members · 240 posts</div>
+            <div style="background:var(--grad);color:#fff;border-radius:7px;padding:4px 0;text-align:center;font-size:9px;font-weight:700;">+ Join · $5.99/mo</div>
+          </div>
+        </div>
+
+        <!-- Fan-right club card -->
+        <div class="club-fan-card club-fan-right" id="clubFanRight">
+          <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=260&h=160&fit=crop" style="width:100%;height:100px;object-fit:cover;display:block;" />
+          <div style="padding:10px 12px;">
+            <div style="font-size:10px;font-weight:800;color:#111;margin-bottom:2px;">Music Trends</div>
+            <div style="font-size:9px;color:#888;margin-bottom:8px;">1.8k members · 95 posts</div>
+            <div style="background:var(--grad);color:#fff;border-radius:7px;padding:4px 0;text-align:center;font-size:9px;font-weight:700;">+ Join · $3.99/mo</div>
+          </div>
+        </div>
+
+        <div class="hphone" style="max-width:260px;width:100%;position:relative;z-index:3;">
+          <div class="h-status"><span>8:53</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
+          <div class="club-screen" style="overflow-y:auto;">
+            <img loading="lazy" class="club-banner-img" src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&h=250&fit=crop" alt="club banner" style="height:76px;" />
+            <div class="club-header" style="position:relative;padding:6px 12px 4px;">
+              <img loading="lazy" class="club-av" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&h=100&fit=crop&crop=face" alt="" />
               <div class="club-join-btn">+ Join</div>
-              <div class="club-name">Mia's Fitness Club</div>
+              <div class="club-name" style="margin-top:22px;">Emma's Yoga Club</div>
               <div class="club-sub">2.4k members · 186 posts</div>
             </div>
-            <div class="club-tabs-row">
+            <div class="club-tabs-row" style="margin-top:2px;">
               <div class="c-tab on">Posts</div>
               <div class="c-tab">Shop</div>
               <div class="c-tab">Membership</div>
             </div>
-            <div class="club-post-card">
+            <!-- Post 1: public -->
+            <div class="club-post-card" style="padding:8px 12px;">
               <div class="cpcard-top">
-                <div class="cpcard-av"><img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=50&h=50&fit=crop&crop=face" alt="" /></div>
-                <div><div class="cpcard-name">Mia Wellness</div><div class="cpcard-time">1h ago</div></div>
+                <div class="cpcard-av"><img loading="lazy" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=50&h=50&fit=crop&crop=face" alt="" /></div>
+                <div><div class="cpcard-name">Emma Walsh</div><div class="cpcard-time">1h ago</div></div>
               </div>
-              <div class="cpcard-img"><img loading="lazy" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=200&fit=crop" alt="" /></div>
-              <div class="cpcard-text">Morning yoga flow — perfect for beginners 🧘‍♀️</div>
+              <div class="cpcard-img"><img loading="lazy" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=200&fit=crop" alt="" style="height:72px;" /></div>
+              <div class="cpcard-text">Morning yoga flow, perfect for beginners 🧘‍♀️</div>
             </div>
-            <div class="locked-card">
-              <img loading="lazy" class="locked-card-img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=200&fit=crop" alt="" />
-              <div class="locked-overlay">
-                <div class="locked-icon">🔒</div>
-                <div class="locked-label">Members Only</div>
-                <div class="locked-sub">Unlock 22 exclusive posts</div>
-                <div class="locked-cta">Subscribe $4.99/mo</div>
+            <!-- Post 2: locked -->
+            <div class="club-post-card" style="padding:8px 12px;border-bottom:none;">
+              <div class="cpcard-top">
+                <div class="cpcard-av"><img loading="lazy" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=50&h=50&fit=crop&crop=face" alt="" /></div>
+                <div><div class="cpcard-name">Emma Walsh</div><div class="cpcard-time">3h ago</div></div>
+              </div>
+              <div class="locked-card" style="margin:0;border-radius:8px;">
+                <img loading="lazy" class="locked-card-img" src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=400&h=200&fit=crop" alt="" style="height:88px;" />
+                <div class="locked-overlay">
+                  <div class="locked-icon">🔒</div>
+                  <div class="locked-label">Members Only</div>
+                  <div class="locked-sub">Unlock 22 exclusive posts</div>
+                  <div class="locked-cta">Subscribe $5/mo</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1229,7 +1236,7 @@
         <ul class="check-list">
           <li>
             <div class="ch-icon">🌟</div>
-            <div><div class="ch-title">Full creator profile</div><div class="ch-desc">Custom banner, bio, stats, clubs, and shop — everything a fan needs to discover and support you</div></div>
+            <div><div class="ch-title">Full creator profile</div><div class="ch-desc">Custom banner, bio, stats, clubs, and shop. Everything a fan needs to discover and support you</div></div>
           </li>
           <li>
             <div class="ch-icon">🛒</div>
@@ -1237,19 +1244,52 @@
           </li>
           <li>
             <div class="ch-icon">📊</div>
-            <div><div class="ch-title">Real-time analytics</div><div class="ch-desc">Track followers, engagement, campaign earnings, subscription revenue, and payouts — all in one dashboard</div></div>
+            <div><div class="ch-title">Real-time analytics</div><div class="ch-desc">Track followers, engagement, campaign earnings, subscription revenue, and payouts in one dashboard</div></div>
           </li>
         </ul>
       </div>
-      <div class="feat-phone reveal-right">
-        <div class="hphone" style="max-width:260px;width:100%;">
-          <div class="h-notch"></div>
-          <div class="h-status"><span>9:41</span><span>●●</span></div>
+      <div class="feat-phone reveal-right" style="position:relative;display:flex;align-items:center;justify-content:center;">
+
+        <!-- Fan-left creator card: earnings snapshot -->
+        <div class="creator-fan-card creator-fan-left" id="creatorFanLeft">
+          <div style="padding:12px 14px;">
+            <div style="font-size:9px;font-weight:700;color:#888;letter-spacing:.05em;margin-bottom:8px;">TODAY'S EARNINGS</div>
+            <div style="font-size:22px;font-weight:900;color:#111;line-height:1;">$847<span style="font-size:12px;font-weight:400;color:#aaa;">.20</span></div>
+            <div style="font-size:9px;color:var(--g2);font-weight:700;margin-top:4px;">↑ 34% vs yesterday</div>
+            <div style="height:36px;margin-top:10px;background:#fafafa;border-radius:8px;overflow:hidden;">
+              <svg viewBox="0 0 120 36" style="width:100%;height:100%;" preserveAspectRatio="none">
+                <polygon fill="rgba(25,168,49,.1)" points="0,28 20,24 40,18 60,20 80,12 100,8 120,5 120,36 0,36"/>
+                <polyline fill="none" stroke="#19A831" stroke-width="1.5" stroke-linecap="round" points="0,28 20,24 40,18 60,20 80,12 100,8 120,5"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fan-right creator card: brand deal notification -->
+        <div class="creator-fan-card creator-fan-right" id="creatorFanRight">
+          <div style="padding:12px 14px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+              <div style="width:28px;height:28px;background:#000;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;">👟</div>
+              <div>
+                <div style="font-size:10px;font-weight:800;color:#111;">Nike</div>
+                <div style="font-size:9px;color:#888;">Brand Campaign</div>
+              </div>
+            </div>
+            <div style="font-size:9px;color:#333;line-height:1.4;margin-bottom:9px;">You've been invited to a new campaign. 14 creators already joined.</div>
+            <div style="display:flex;gap:6px;">
+              <div style="flex:1;background:var(--grad);color:#fff;border-radius:7px;padding:5px 0;text-align:center;font-size:9px;font-weight:700;">Accept · $250</div>
+              <div style="background:#f5f5f5;color:#888;border-radius:7px;padding:5px 8px;font-size:9px;font-weight:600;">Skip</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hphone" style="max-width:260px;width:100%;position:relative;z-index:3;">
+          <div class="h-status"><span>11:06</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
           <div class="creator-screen">
             <img loading="lazy" class="creator-banner" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=250&fit=crop" alt="Creator banner" />
             <div class="creator-info" style="position:relative;">
               <img loading="lazy" class="creator-av" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=face" alt="" />
-              <div class="creator-name">Alex Gaming</div>
+              <div class="creator-name">Alex Torres</div>
               <div class="creator-bio">Pro gamer · Content creator · Twitch partner 🎮</div>
               <div class="creator-stats">
                 <div><div class="cstat-val">1.2M</div><div class="cstat-lbl">Followers</div></div>
@@ -1298,12 +1338,12 @@
 </div>
 
 <!-- ══════════════ FEATURES BENTO GRID ══════════════ -->
-<div class="section bg-off" style="padding:72px 64px;">
+<div class="section bg-off">
   <div class="section-inner">
     <div style="text-align:center;margin-bottom:56px;" class="reveal">
       <div class="section-chip">Platform Features</div>
       <h2 class="sh">Every tool a creator<br>needs to <em>build & earn</em></h2>
-      <p class="section-desc" style="margin:0 auto;">Follow'd combines a social feed, community platform, and creator economy toolkit — everything in one app, nothing siloed.</p>
+      <p class="section-desc" style="margin:0 auto;">Follow'd combines a social feed, community platform, and creator economy toolkit. Everything in one app, nothing siloed.</p>
     </div>
     <div class="bento-grid">
 
@@ -1311,13 +1351,13 @@
 
       <!-- FEED -->
       <div class="bento-card bento-span2 reveal">
-        <div class="bento-preview" style="min-height:260px;padding:28px 32px 0;align-items:flex-start;justify-content:center;">
+        <div class="bento-preview" style="min-height:260px;padding:28px 32px;align-items:center;justify-content:center;">
           <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;max-width:520px;">
             <div style="padding:14px 16px;border-bottom:1px solid #f5f5f5;display:flex;gap:10px;">
               <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop&crop=face" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
               <div style="flex:1;min-width:0;">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
-                  <div style="font-size:11px;font-weight:700;color:#111;">Sofia Style <span style="font-weight:400;color:#aaa;">· 2h ago</span></div>
+                  <div style="font-size:11px;font-weight:700;color:#111;">Sofia Rivera <span style="font-weight:400;color:#aaa;">· 2h ago</span></div>
                   <div style="font-size:9px;font-weight:700;color:var(--g2);background:#f0fff4;border:1px solid #bbf7d0;border-radius:20px;padding:2px 8px;">Members only</div>
                 </div>
                 <img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=520&h=140&fit=crop" style="width:100%;height:90px;object-fit:cover;border-radius:10px;display:block;margin-bottom:8px;" />
@@ -1328,7 +1368,7 @@
             <div style="padding:12px 16px;display:flex;gap:10px;">
               <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
               <div style="flex:1;">
-                <div style="font-size:11px;font-weight:700;color:#111;margin-bottom:3px;">Alex Gaming <span style="font-weight:400;color:#aaa;">· 4h ago</span></div>
+                <div style="font-size:11px;font-weight:700;color:#111;margin-bottom:3px;">Alex Torres <span style="font-weight:400;color:#aaa;">· 4h ago</span></div>
                 <div style="font-size:10px;color:#333;margin-bottom:5px;">Tournament recap + new setup tour 🎮 Drop your questions below...</div>
                 <div style="display:flex;gap:16px;font-size:10px;color:#aaa;">❤️ 2.4k &nbsp; 💬 213</div>
               </div>
@@ -1338,7 +1378,7 @@
         <div class="bento-card-body">
           <div class="bento-tag">Social Feed</div>
           <div class="bento-title">A Feed Built for Creators</div>
-          <div class="bento-desc">Post photos, videos, and exclusive content directly to your followers. Free posts grow your audience; gated content earns you money — all from one unified feed.</div>
+          <div class="bento-desc">Post photos, videos, and exclusive content directly to your followers. Free posts grow your audience; gated content earns you money. All from one unified feed.</div>
         </div>
       </div>
 
@@ -1355,15 +1395,76 @@
         <div class="bento-card-body">
           <div class="bento-tag">Recurring Income</div>
           <div class="bento-title">Subscriptions</div>
-          <div class="bento-desc">Generate predictable passive income by gating your best content behind monthly memberships — you set the price, keep 90%.</div>
+          <div class="bento-desc">Generate predictable passive income by gating your best content behind monthly memberships. You set the price and keep 90%.</div>
         </div>
       </div>
 
-      <!-- ② MARKETPLACE — span 1 + LIVESTREAMING — wide (span 2) -->
+      <!-- ② ROW OF 3: Pay to View · Paid DMs · Group Chats -->
+
+      <div class="bento-card reveal">
+        <div class="bento-preview" style="padding:20px;justify-content:center;">
+          <div style="position:relative;border-radius:14px;overflow:hidden;width:100%;">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=180&fit=crop" style="width:100%;height:100px;object-fit:cover;filter:blur(5px) brightness(.85);display:block;border-radius:10px;" />
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+              <div style="background:#111;border-radius:11px;padding:8px 16px;font-size:11px;font-weight:700;color:#fff;">🔒 Unlock for $15</div>
+            </div>
+          </div>
+        </div>
+        <div class="bento-card-body">
+          <div class="bento-tag">Per-Post</div>
+          <div class="bento-title">Pay to View</div>
+          <div class="bento-desc">Lock your best content (tutorials, behind-the-scenes, drops) and charge once to unlock.</div>
+        </div>
+      </div>
+
+      <div class="bento-card reveal">
+        <div class="bento-preview" style="padding:18px;align-items:center;flex-direction:column;gap:8px;">
+          <div class="mini-card" style="width:100%;padding:10px 12px;">
+            <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop&crop=face" style="width:28px;height:28px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+              <div style="background:#f5f5f5;border-radius:10px 10px 10px 2px;padding:7px 10px;font-size:10px;color:#333;line-height:1.4;">Morning routine just dropped 💪 Unlock to see the full video!</div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;justify-content:flex-end;">
+              <div style="font-size:9px;color:#aaa;">Message...</div>
+              <div style="font-size:9px;font-weight:700;color:var(--g2);background:#f0fff4;border:1px solid #bbf7d0;border-radius:20px;padding:2px 8px;">Tip $5</div>
+            </div>
+          </div>
+          <div style="background:#111;border-radius:9px;padding:6px 12px;font-size:10px;font-weight:700;color:#fff;align-self:flex-end;">🔒 Unlock for $8</div>
+        </div>
+        <div class="bento-card-body">
+          <div class="bento-tag">Direct</div>
+          <div class="bento-title">Paid DMs</div>
+          <div class="bento-desc">Earn 1-on-1 with your fans. Send unlockable content and accept tips in private messages.</div>
+        </div>
+      </div>
+
+      <div class="bento-card reveal">
+        <div class="bento-preview" style="padding:18px;">
+          <div class="mini-card" style="width:100%;padding:10px 12px;">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
+              <div style="display:flex;">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop&crop=face" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;object-fit:cover;" />
+                <img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop&crop=face" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;margin-left:-7px;object-fit:cover;" />
+                <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;margin-left:-7px;object-fit:cover;" />
+              </div>
+              <div style="font-size:9px;font-weight:700;color:#111;">Fitness Club · 842 members</div>
+            </div>
+            <div style="background:#f5f5f5;border-radius:8px 8px 8px 2px;padding:6px 9px;font-size:9px;color:#333;margin-bottom:5px;">Just finished the workout 💪 who's joining tomorrow?</div>
+            <div style="background:#f0fff4;border-radius:8px 8px 2px 8px;padding:6px 9px;font-size:9px;color:#333;margin-left:16px;">I'm in! See you at 6am 🌅</div>
+          </div>
+        </div>
+        <div class="bento-card-body">
+          <div class="bento-tag">Community</div>
+          <div class="bento-title">Group Chats</div>
+          <div class="bento-desc">Unite your community with real-time group chats inside your Club. Members connect with you and each other.</div>
+        </div>
+      </div>
+
+      <!-- ③ MARKETPLACE span 1 + DIGITAL SHOP wide (span 2) -->
 
       <!-- MARKETPLACE -->
       <div class="bento-card reveal">
-        <div class="bento-preview" style="min-height:230px;padding:20px 18px 0;">
+        <div class="bento-preview" style="min-height:230px;padding:20px 18px;">
           <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.09);width:100%;max-width:240px;">
             <div style="padding:9px 12px;border-bottom:1px solid #f5f5f5;font-size:9px;font-weight:700;color:#888;letter-spacing:.05em;">MARKETPLACE · TRENDING</div>
             <div style="padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:5px;">
@@ -1389,13 +1490,60 @@
         <div class="bento-card-body">
           <div class="bento-tag">Shop & Discover</div>
           <div class="bento-title">Marketplace</div>
-          <div class="bento-desc">Fans browse and buy from creators they follow — digital downloads, merch drops, and exclusive products all in one discoverable place.</div>
+          <div class="bento-desc">Fans browse and buy from creators they follow: digital downloads, merch drops, and exclusive products all in one discoverable place.</div>
         </div>
       </div>
 
+      <!-- DIGITAL SHOP -->
+      <div class="bento-card bento-span2 reveal">
+        <div class="bento-preview" style="min-height:230px;padding:28px 32px;align-items:center;justify-content:center;">
+          <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;max-width:520px;padding:14px 16px;">
+            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.05em;margin-bottom:12px;">YOUR SHOP · 14 PRODUCTS</div>
+            <div style="display:flex;gap:10px;">
+              <div style="flex:1;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
+                <div style="background:#f8fbf8;overflow:hidden;height:60px;">
+                  <img loading="lazy" src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=200&h=120&fit=crop" style="width:100%;height:100%;object-fit:cover;display:block;" />
+                </div>
+                <div style="padding:8px 10px;">
+                  <div style="font-size:10px;font-weight:700;color:#111;">Birthday Video</div>
+                  <div style="font-size:9px;color:#888;margin:2px 0;">Personalized · 60 sec</div>
+                  <div style="font-size:13px;font-weight:900;color:#111;margin-top:3px;">$35.00</div>
+                  <div style="background:var(--grad);color:#fff;border-radius:7px;padding:5px 0;text-align:center;font-size:9px;font-weight:700;margin-top:7px;">Buy Now</div>
+                </div>
+              </div>
+              <div style="flex:1;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
+                <div style="background:#f8fbf8;padding:12px;text-align:center;font-size:24px;">🎧</div>
+                <div style="padding:8px 10px;">
+                  <div style="font-size:10px;font-weight:700;color:#111;">Beat Pack Vol.3</div>
+                  <div style="font-size:9px;color:#888;margin:2px 0;">10 tracks · WAV + MP3</div>
+                  <div style="font-size:13px;font-weight:900;color:#111;margin-top:3px;">$49.00</div>
+                  <div style="background:var(--grad);color:#fff;border-radius:7px;padding:5px 0;text-align:center;font-size:9px;font-weight:700;margin-top:7px;">Buy Now</div>
+                </div>
+              </div>
+              <div style="flex:1;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
+                <div style="background:#f8fbf8;padding:12px;text-align:center;font-size:24px;">📈</div>
+                <div style="padding:8px 10px;">
+                  <div style="font-size:10px;font-weight:700;color:#111;">Trading Stocks PDF</div>
+                  <div style="font-size:9px;color:#888;margin:2px 0;">48-page course</div>
+                  <div style="font-size:13px;font-weight:900;color:#111;margin-top:3px;">$29.00</div>
+                  <div style="background:var(--grad);color:#fff;border-radius:7px;padding:5px 0;text-align:center;font-size:9px;font-weight:700;margin-top:7px;">Buy Now</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bento-card-body">
+          <div class="bento-tag">Digital Commerce</div>
+          <div class="bento-title">Digital Shop</div>
+          <div class="bento-desc">Sell presets, guides, courses, art, beats, and templates as digital downloads, directly from your Club Shop. You keep 90%.</div>
+        </div>
+      </div>
+
+      <!-- ④ LIVESTREAMING wide (span 2) + PHYSICAL GOODS span 1 -->
+
       <!-- LIVESTREAMING -->
       <div class="bento-card bento-span2 reveal">
-        <div class="bento-preview" style="min-height:230px;padding:28px 32px 0;align-items:flex-start;justify-content:center;">
+        <div class="bento-preview" style="min-height:230px;padding:28px 32px;align-items:center;justify-content:center;">
           <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;max-width:520px;">
             <div style="position:relative;">
               <img loading="lazy" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=520&h=160&fit=crop" style="width:100%;height:120px;object-fit:cover;display:block;" />
@@ -1404,7 +1552,7 @@
             </div>
             <div style="padding:12px 16px;display:flex;align-items:center;justify-content:space-between;">
               <div>
-                <div style="font-size:11px;font-weight:700;color:#111;margin-bottom:2px;">Sofia Style is live now</div>
+                <div style="font-size:11px;font-weight:700;color:#111;margin-bottom:2px;">Sofia Rivera is live now</div>
                 <div style="font-size:10px;color:#888;">Subscribers get HD + chat access</div>
               </div>
               <div style="display:flex;gap:6px;">
@@ -1422,111 +1570,6 @@
         </div>
       </div>
 
-      <!-- ③ ROW OF 3 EQUAL: Pay to View · Paid DMs · Group Chats -->
-
-      <div class="bento-card reveal">
-        <div class="bento-preview" style="padding:20px 20px 0;justify-content:flex-start;">
-          <div style="position:relative;border-radius:14px;overflow:hidden;width:100%;">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=180&fit=crop" style="width:100%;height:100px;object-fit:cover;filter:blur(5px) brightness(.85);display:block;border-radius:10px;" />
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-              <div style="background:#111;border-radius:11px;padding:8px 16px;font-size:11px;font-weight:700;color:#fff;">🔒 Unlock for $15</div>
-            </div>
-          </div>
-        </div>
-        <div class="bento-card-body">
-          <div class="bento-tag">Per-Post</div>
-          <div class="bento-title">Pay to View</div>
-          <div class="bento-desc">Lock your best content — tutorials, behind-the-scenes, drops — and charge once to unlock.</div>
-        </div>
-      </div>
-
-      <div class="bento-card reveal">
-        <div class="bento-preview" style="padding:18px 18px 0;align-items:flex-start;flex-direction:column;gap:8px;">
-          <div class="mini-card" style="width:100%;padding:10px 12px;">
-            <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop&crop=face" style="width:28px;height:28px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
-              <div style="background:#f5f5f5;border-radius:10px 10px 10px 2px;padding:7px 10px;font-size:10px;color:#333;line-height:1.4;">Morning routine just dropped 💪 Unlock to see the full video!</div>
-            </div>
-            <div style="display:flex;gap:8px;align-items:center;justify-content:flex-end;">
-              <div style="font-size:9px;color:#aaa;">Message...</div>
-              <div style="font-size:9px;font-weight:700;color:var(--g2);background:#f0fff4;border:1px solid #bbf7d0;border-radius:20px;padding:2px 8px;">Tip $5</div>
-            </div>
-          </div>
-          <div style="background:#111;border-radius:9px;padding:6px 12px;font-size:10px;font-weight:700;color:#fff;align-self:flex-end;">🔒 Unlock for $8</div>
-        </div>
-        <div class="bento-card-body">
-          <div class="bento-tag">Direct</div>
-          <div class="bento-title">Paid DMs</div>
-          <div class="bento-desc">Earn 1-on-1 with your fans. Send unlockable content and accept tips in private messages.</div>
-        </div>
-      </div>
-
-      <div class="bento-card reveal">
-        <div class="bento-preview" style="padding:18px 18px 0;">
-          <div class="mini-card" style="width:100%;padding:10px 12px;">
-            <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
-              <div style="display:flex;">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop&crop=face" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;object-fit:cover;" />
-                <img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop&crop=face" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;margin-left:-7px;object-fit:cover;" />
-                <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;margin-left:-7px;object-fit:cover;" />
-              </div>
-              <div style="font-size:9px;font-weight:700;color:#111;">Fitness Club · 842 members</div>
-            </div>
-            <div style="background:#f5f5f5;border-radius:8px 8px 8px 2px;padding:6px 9px;font-size:9px;color:#333;margin-bottom:5px;">Just finished the workout 💪 who's joining tomorrow?</div>
-            <div style="background:#f0fff4;border-radius:8px 8px 2px 8px;padding:6px 9px;font-size:9px;color:#333;margin-left:16px;">I'm in! See you at 6am 🌅</div>
-          </div>
-        </div>
-        <div class="bento-card-body">
-          <div class="bento-tag">Community</div>
-          <div class="bento-title">Group Chats</div>
-          <div class="bento-desc">Unite your community with real-time group chats inside your Club — members connect with you and each other.</div>
-        </div>
-      </div>
-
-      <!-- ④ DIGITAL SHOP wide (span 2) + PHYSICAL GOODS span 1 -->
-
-      <div class="bento-card bento-span2 reveal">
-        <div class="bento-preview" style="min-height:210px;padding:28px 32px 0;align-items:flex-start;justify-content:center;">
-          <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;max-width:520px;padding:14px 16px;">
-            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.05em;margin-bottom:12px;">YOUR SHOP · 14 PRODUCTS</div>
-            <div style="display:flex;gap:10px;">
-              <div style="flex:1;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
-                <div style="background:#f8fbf8;padding:12px;text-align:center;font-size:24px;">📐</div>
-                <div style="padding:8px 10px;">
-                  <div style="font-size:10px;font-weight:700;color:#111;">Lightroom Presets</div>
-                  <div style="font-size:9px;color:#888;margin:2px 0;">24 presets · Instant DL</div>
-                  <div style="font-size:13px;font-weight:900;color:#111;margin-top:3px;">$24.00</div>
-                  <div style="background:var(--grad);color:#fff;border-radius:7px;padding:5px 0;text-align:center;font-size:9px;font-weight:700;margin-top:7px;">Buy Now</div>
-                </div>
-              </div>
-              <div style="flex:1;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
-                <div style="background:#f8fbf8;padding:12px;text-align:center;font-size:24px;">🎧</div>
-                <div style="padding:8px 10px;">
-                  <div style="font-size:10px;font-weight:700;color:#111;">Beat Pack Vol.3</div>
-                  <div style="font-size:9px;color:#888;margin:2px 0;">10 tracks · WAV + MP3</div>
-                  <div style="font-size:13px;font-weight:900;color:#111;margin-top:3px;">$49.00</div>
-                  <div style="background:var(--grad);color:#fff;border-radius:7px;padding:5px 0;text-align:center;font-size:9px;font-weight:700;margin-top:7px;">Buy Now</div>
-                </div>
-              </div>
-              <div style="flex:1;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
-                <div style="background:#f8fbf8;padding:12px;text-align:center;font-size:24px;">📋</div>
-                <div style="padding:8px 10px;">
-                  <div style="font-size:10px;font-weight:700;color:#111;">Brand Kit PDF</div>
-                  <div style="font-size:9px;color:#888;margin:2px 0;">32-page guide</div>
-                  <div style="font-size:13px;font-weight:900;color:#111;margin-top:3px;">$19.00</div>
-                  <div style="background:var(--grad);color:#fff;border-radius:7px;padding:5px 0;text-align:center;font-size:9px;font-weight:700;margin-top:7px;">Buy Now</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bento-card-body">
-          <div class="bento-tag">Digital Commerce</div>
-          <div class="bento-title">Digital Shop</div>
-          <div class="bento-desc">Sell presets, guides, courses, art, beats, templates — any digital download, directly from your Club Shop. You keep 90%.</div>
-        </div>
-      </div>
-
       <div class="bento-card reveal">
         <div class="bento-preview" style="min-height:210px;">
           <div class="mini-card" style="width:210px;">
@@ -1536,7 +1579,7 @@
               </div>
               <div>
                 <div style="font-size:11px;font-weight:700;color:#111;">Limited Merch Drop</div>
-                <div style="font-size:10px;color:#888;margin-top:2px;">Unisex hoodie · Sizes S–XL</div>
+                <div style="font-size:10px;color:#888;margin-top:2px;">Unisex hoodie · Sizes S-XL</div>
                 <div style="font-size:13px;font-weight:900;color:#111;margin-top:4px;">$49.00</div>
               </div>
             </div>
@@ -1546,7 +1589,7 @@
         <div class="bento-card-body">
           <div class="bento-tag">Physical Commerce</div>
           <div class="bento-title">Physical Goods</div>
-          <div class="bento-desc">Drop merch, prints, or physical products to your fans. Built-in shop handles orders, payments, and fulfilment — no third party needed.</div>
+          <div class="bento-desc">Drop merch, prints, or physical products to your fans. The built-in shop handles orders, payments, and fulfilment with no third party needed.</div>
         </div>
       </div>
 
@@ -1568,15 +1611,15 @@
         <div class="bento-card-body">
           <div class="bento-tag">1:1 Coaching</div>
           <div class="bento-title">Paid Calls</div>
-          <div class="bento-desc">Offer private coaching, consultations, or fan chats. Fans book directly in the app — you set your rate and schedule.</div>
+          <div class="bento-desc">Offer private coaching, consultations, or fan chats. Fans book directly in the app. You set your rate and schedule.</div>
         </div>
       </div>
 
       <div class="bento-card bento-span2 reveal">
-        <div class="bento-preview" style="min-height:210px;padding:28px 32px 0;align-items:flex-start;justify-content:center;">
+        <div class="bento-preview" style="min-height:210px;padding:28px 32px;align-items:center;justify-content:center;">
           <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;max-width:520px;padding:14px 16px;">
             <div style="display:flex;gap:14px;align-items:flex-start;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=200&fit=crop" style="width:140px;height:105px;object-fit:cover;border-radius:10px;flex-shrink:0;" />
+              <img loading="lazy" src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&h=200&fit=crop" style="width:140px;height:105px;object-fit:cover;border-radius:10px;flex-shrink:0;" />
               <div style="flex:1;">
                 <div style="font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--g2);background:#f0fff4;border-radius:20px;padding:2px 9px;display:inline-block;margin-bottom:7px;">BESTSELLER</div>
                 <div style="font-size:13px;font-weight:800;color:#111;line-height:1.3;margin-bottom:5px;">90-Day Transformation Program</div>
@@ -1593,7 +1636,7 @@
         <div class="bento-card-body">
           <div class="bento-tag">Education</div>
           <div class="bento-title">Classes & Courses</div>
-          <div class="bento-desc">Turn your expertise into structured courses. Video lessons, quizzes, and lifetime access — sell once, earn forever. Keep 90%.</div>
+          <div class="bento-desc">Turn your expertise into structured courses. Video lessons, quizzes, and lifetime access. Sell once, earn forever. Keep 90%.</div>
         </div>
       </div>
 
@@ -1615,12 +1658,12 @@
         <div class="bento-card-body">
           <div class="bento-tag">Events</div>
           <div class="bento-title">Live Events</div>
-          <div class="bento-desc">Host ticketed live events — virtual masterclasses, workshops, or IRL meetups. Sell tickets and manage RSVPs all from the app.</div>
+          <div class="bento-desc">Host ticketed live events: virtual masterclasses, workshops, or IRL meetups. Sell tickets and manage RSVPs all from the app.</div>
         </div>
       </div>
 
       <div class="bento-card bento-span2 reveal">
-        <div class="bento-preview" style="padding:28px 32px 0;align-items:flex-start;justify-content:center;">
+        <div class="bento-preview" style="padding:28px 32px;align-items:center;justify-content:center;">
           <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;max-width:520px;padding:14px 16px;">
             <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.05em;margin-bottom:12px;">YOUR PROMO CODES · 3 ACTIVE</div>
             <div style="display:flex;gap:10px;">
@@ -1642,7 +1685,7 @@
               </div>
               <div style="flex:1;border:1.5px dashed #eee;border-radius:12px;padding:12px 14px;opacity:.55;">
                 <div style="font-size:16px;font-weight:900;color:#111;margin-bottom:4px;">SUMMER20</div>
-                <div style="font-size:10px;color:#888;margin-bottom:7px;">20% off — seasonal</div>
+                <div style="font-size:10px;color:#888;margin-bottom:7px;">20% off, seasonal</div>
                 <div style="display:flex;align-items:center;justify-content:space-between;">
                   <div style="font-size:9px;color:#aaa;">128 uses</div>
                   <div style="font-size:9px;font-weight:700;color:#aaa;background:#f5f5f5;border-radius:20px;padding:2px 7px;">Expired</div>
@@ -1669,15 +1712,15 @@
       <div class="reveal-left">
         <div class="section-chip">Earnings</div>
         <h2 class="sh">Watch your income<br>grow in <em>real time</em></h2>
-        <p class="section-desc">One unified dashboard for every revenue stream — subscriptions, brand campaigns, shop sales, and task rewards — updated live.</p>
+        <p class="section-desc">One unified dashboard covering subscriptions, brand campaigns, shop sales, and task rewards, updated live.</p>
         <ul class="check-list">
           <li>
             <div class="ch-icon">📊</div>
-            <div><div class="ch-title">Live earnings overview</div><div class="ch-desc">See all income sources in one place — no jumping between dashboards or waiting for reports</div></div>
+            <div><div class="ch-title">Live earnings overview</div><div class="ch-desc">See all income sources in one place. No jumping between dashboards or waiting for reports</div></div>
           </li>
           <li>
             <div class="ch-icon">💸</div>
-            <div><div class="ch-title">Weekly payouts</div><div class="ch-desc">Get paid every week directly to your bank — no minimum threshold, no waiting months</div></div>
+            <div><div class="ch-title">Weekly payouts</div><div class="ch-desc">Get paid every week directly to your bank. No minimum threshold, no waiting months</div></div>
           </li>
           <li>
             <div class="ch-icon">📈</div>
@@ -1687,22 +1730,21 @@
       </div>
       <div class="feat-phone reveal-right">
         <div class="hphone" style="max-width:265px;width:100%;">
-          <div class="h-notch"></div>
-          <div class="h-status"><span>9:41</span><span>●●</span></div>
-          <div style="background:#fff;padding-bottom:10px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 14px 10px;">
+          <div class="h-status"><span>2:18</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
+          <div style="background:#fff;flex:1;overflow:hidden;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 14px 8px;flex-shrink:0;">
               <div style="font-size:12px;font-weight:700;color:#111;">← Creator Tools</div>
               <div style="font-size:18px;color:#ddd;">···</div>
             </div>
-            <div style="display:flex;border-bottom:1px solid #f0f0f0;padding:0 14px;gap:14px;margin-bottom:14px;">
-              <div style="font-size:10px;color:#bbb;padding-bottom:8px;">Members</div>
-              <div style="font-size:10px;color:#bbb;padding-bottom:8px;">Messages</div>
-              <div style="font-size:10px;font-weight:800;color:#111;padding-bottom:8px;border-bottom:2px solid #111;">Earnings</div>
+            <div style="display:flex;border-bottom:1px solid #f0f0f0;padding:0 14px;gap:14px;margin-bottom:10px;flex-shrink:0;">
+              <div style="font-size:10px;color:#bbb;padding-bottom:7px;">Members</div>
+              <div style="font-size:10px;color:#bbb;padding-bottom:7px;">Messages</div>
+              <div style="font-size:10px;font-weight:800;color:#111;padding-bottom:7px;border-bottom:2px solid #111;">Earnings</div>
             </div>
-            <div style="padding:0 14px 14px;">
-              <div style="font-size:28px;font-weight:900;color:#111;line-height:1;">$8,247<span style="font-size:16px;color:#aaa;">.30</span></div>
-              <div style="font-size:9px;color:#aaa;margin-top:3px;">Last 30 days</div>
-              <div style="height:52px;margin:14px 0 6px;background:#fafafa;border-radius:10px;overflow:hidden;">
+            <div style="padding:0 14px;flex:1;overflow:hidden;display:flex;flex-direction:column;">
+              <div style="font-size:24px;font-weight:900;color:#111;line-height:1;">$8,247<span style="font-size:14px;color:#aaa;">.30</span></div>
+              <div style="font-size:9px;color:#aaa;margin-top:2px;">Last 30 days</div>
+              <div style="height:44px;margin:10px 0 4px;background:#fafafa;border-radius:10px;overflow:hidden;flex-shrink:0;">
                 <svg viewBox="0 0 240 52" style="width:100%;height:100%;" preserveAspectRatio="none">
                   <defs>
                     <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
@@ -1714,13 +1756,20 @@
                   <polyline fill="none" stroke="#19A831" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,42 28,38 55,30 80,33 108,22 132,16 158,19 182,11 220,7 240,5"/>
                 </svg>
               </div>
-              <div style="display:flex;justify-content:space-between;font-size:8px;color:#ccc;margin-bottom:12px;"><span>Dec 1</span><span>Dec 31</span></div>
-              <div style="font-size:11px;font-weight:800;color:#111;margin-bottom:9px;">Revenue Sources</div>
+              <div style="display:flex;justify-content:space-between;font-size:8px;color:#ccc;margin-bottom:8px;"><span>Dec 1</span><span>Dec 31</span></div>
+              <div style="font-size:10px;font-weight:800;color:#111;margin-bottom:6px;">Revenue Sources</div>
               <div class="dash-row"><span>Club Subscriptions</span><strong>$4,130.00</strong></div>
               <div class="dash-row"><span>Brand Campaigns</span><strong>$2,680.00</strong></div>
               <div class="dash-row"><span>Digital Shop</span><strong>$990.45</strong></div>
               <div class="dash-row"><span>Paid Calls</span><strong>$600.00</strong></div>
               <div class="dash-row" style="border-bottom:none;"><span>Daily Tasks</span><strong>$446.85</strong></div>
+            </div>
+            <div style="margin:6px 14px 10px;background:#f0fff4;border-radius:10px;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+              <div>
+                <div style="font-size:9px;color:#888;font-weight:600;">Available to Withdraw</div>
+                <div style="font-size:14px;font-weight:900;color:#111;margin-top:1px;">$8,247<span style="font-size:9px;color:#aaa;">.30</span></div>
+              </div>
+              <div style="background:var(--grad);color:#fff;border-radius:8px;padding:5px 10px;font-size:9px;font-weight:800;">Cash Out</div>
             </div>
           </div>
           <div class="phone-nav">
@@ -1768,7 +1817,7 @@
       <div class="reveal-left">
         <div class="section-chip white">Creator Revenue</div>
         <h2 class="sh white">You keep <em>90%</em><br>of everything<br>you earn.</h2>
-        <p class="section-desc white">Follow'd takes just 10% — leaving more in your pocket from every subscription, brand deal, shop sale, and paid call than on any competing platform.</p>
+        <p class="section-desc white">Follow'd takes just 10%, leaving more in your pocket from every subscription, brand deal, shop sale, and paid call than on any competing platform.</p>
         <div style="display:flex;gap:14px;margin-top:8px;">
           <div style="background:#1a1a1a;border:1px solid rgba(84,240,110,.3);border-radius:16px;padding:22px 24px;flex:1;">
             <div style="font-size:36px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">90%</div>
@@ -1818,44 +1867,44 @@
   <div class="section-inner">
     <div class="reveal" style="text-align:center;margin-bottom:16px;"><div class="section-chip white">Earn</div></div>
     <h2 class="sh white reveal" style="text-align:center;max-width:700px;margin:0 auto 16px;">Every way you earn on Follow'd —<br><em>and get paid fast</em></h2>
-    <p class="section-desc white reveal" style="margin:0 auto 48px;text-align:center;max-width:600px;">Stack multiple revenue streams simultaneously. Your dollar balance updates in real time and you can cash out on your schedule — no minimums, no holds.</p>
+    <p class="section-desc white reveal" style="margin:0 auto 48px;text-align:center;max-width:600px;">Stack multiple revenue streams simultaneously. Your dollar balance updates in real time and you can cash out on your schedule. No minimums, no holds.</p>
 
     <div class="earn-cards">
       <div class="earn-card reveal">
         <div class="ecard-icon">📣</div>
         <div class="ecard-title">Brand Campaigns</div>
-        <div class="ecard-desc">Join campaigns from top brands. Earn per click, per sale, or per referral — available to any creator regardless of audience size.</div>
+        <div class="ecard-desc">Join campaigns from top brands. Earn per click, per sale, or per referral. Available to any creator regardless of audience size.</div>
         <div class="ecard-val">Up to $2,001 / week</div>
-      </div>
-      <div class="earn-card reveal">
-        <div class="ecard-icon">🔑</div>
-        <div class="ecard-title">Club Subscriptions</div>
-        <div class="ecard-desc">Offer monthly memberships to your Club. Lock exclusive content, set your price — and keep up to 80% of every subscription.</div>
-        <div class="ecard-val">Recurring monthly income</div>
-      </div>
-      <div class="earn-card reveal">
-        <div class="ecard-icon">🛒</div>
-        <div class="ecard-title">Digital Shop</div>
-        <div class="ecard-desc">Sell art, guides, presets, beats, coaching sessions, and digital downloads directly from your Club Shop.</div>
-        <div class="ecard-val">Keep what you sell</div>
       </div>
       <div class="earn-card reveal">
         <div class="ecard-icon">🔥</div>
         <div class="ecard-title">Daily Cash Tasks</div>
-        <div class="ecard-desc">Post content, build your Club, invite friends, and complete daily challenges — each earns real dollars credited instantly to your balance.</div>
-        <div class="ecard-val">$1 – $100 per task</div>
+        <div class="ecard-desc">Post content, build your Club, invite friends, and complete daily challenges. Each earns real dollars credited instantly to your balance.</div>
+        <div class="ecard-val">$1 to $100 per task</div>
       </div>
       <div class="earn-card reveal">
         <div class="ecard-icon">👥</div>
         <div class="ecard-title">Referrals</div>
-        <div class="ecard-desc">Invite friends to Follow'd and earn up to $100 per referral. Share your link — your balance grows while you sleep.</div>
+        <div class="ecard-desc">Invite friends to Follow'd and earn up to $100 per referral. Share your link and your balance grows every time someone signs up.</div>
         <div class="ecard-val">Up to $100 / referral</div>
       </div>
       <div class="earn-card reveal">
-        <div class="ecard-icon">📞</div>
-        <div class="ecard-title">Paid 1:1 Calls</div>
-        <div class="ecard-desc">Offer private coaching sessions, consultations, or fan chats. Fans pay to book time with you — you set the rate, we handle payment.</div>
-        <div class="ecard-val">You set the rate</div>
+        <div class="ecard-icon">💳</div>
+        <div class="ecard-title">Cashback Rewards</div>
+        <div class="ecard-desc">Shop through Follow'd partner brands and earn cashback on every purchase. Real money back in your creator balance automatically.</div>
+        <div class="ecard-val">Up to 15% cashback</div>
+      </div>
+      <div class="earn-card reveal">
+        <div class="ecard-icon">🎮</div>
+        <div class="ecard-title">Play Games</div>
+        <div class="ecard-desc">Earn real cash by playing sponsored in-app games and challenges. The more you play, the more you stack. No skill required to start.</div>
+        <div class="ecard-val">$0.50 to $50 per game</div>
+      </div>
+      <div class="earn-card reveal">
+        <div class="ecard-icon">🤝</div>
+        <div class="ecard-title">Fan Interactions</div>
+        <div class="ecard-desc">Get tipped by fans on posts, earn when followers share your content through sponsored campaigns, and collect bonuses for engagement milestones.</div>
+        <div class="ecard-val">Earns on every action</div>
       </div>
     </div>
 
@@ -1864,32 +1913,28 @@
       <div style="text-align:center;margin-bottom:32px;">
         <div class="section-chip white" style="margin-bottom:12px;">Getting Paid</div>
         <h3 style="font-size:clamp(22px,2.8vw,36px);font-weight:900;color:#fff;letter-spacing:-0.03em;margin-bottom:12px;">Up and earning in <em style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">minutes</em></h3>
-        <p style="color:#888;font-size:15px;max-width:520px;margin:0 auto;">Sign up free, post your first piece of content, and watch real dollars start flowing in — with flexible payout options that fit your schedule.</p>
+        <p style="color:#888;font-size:15px;max-width:520px;margin:0 auto;">Sign up free, post your first piece of content, and watch real dollars start flowing in, with flexible payout options that fit your schedule.</p>
       </div>
       <div class="earn-payout-grid hiw-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:960px;margin:0 auto;">
         <div class="hiw-card reveal" style="background:#111;border:1px solid #1e1e1e;">
           <div class="hiw-num" style="color:#54F06E;">Step 01</div>
-          <div class="hiw-icon">📲</div>
           <div class="hiw-title" style="color:#fff;">Download Follow'd</div>
           <div class="hiw-desc" style="color:#888;">Sign up in under 60 seconds. Free on iOS and Android. No followers required.</div>
         </div>
         <div class="hiw-card reveal" style="background:#111;border:1px solid #1e1e1e;">
           <div class="hiw-num" style="color:#54F06E;">Step 02</div>
-          <div class="hiw-icon">✍️</div>
           <div class="hiw-title" style="color:#fff;">Build Your Club</div>
           <div class="hiw-desc" style="color:#888;">Set up your creator profile and Club, post content, and start engaging your audience.</div>
         </div>
         <div class="hiw-card reveal" style="background:#111;border:1px solid #1e1e1e;">
           <div class="hiw-num" style="color:#54F06E;">Step 03</div>
-          <div class="hiw-icon">🤝</div>
           <div class="hiw-title" style="color:#fff;">Stack Revenue</div>
-          <div class="hiw-desc" style="color:#888;">Join brand campaigns, sell in your shop, run tasks — multiple dollar streams running in parallel.</div>
+          <div class="hiw-desc" style="color:#888;">Join brand campaigns, sell in your shop, and run tasks. Multiple dollar streams running in parallel.</div>
         </div>
         <div class="hiw-card reveal" style="background:#111;border:1px solid #1e1e1e;">
           <div class="hiw-num" style="color:#54F06E;">Step 04</div>
-          <div class="hiw-icon">💸</div>
           <div class="hiw-title" style="color:#fff;">Cash Out Anytime</div>
-          <div class="hiw-desc" style="color:#888;">Weekly payouts, instant transfers, or manual withdraw — via bank, PayPal, or Venmo. No minimums.</div>
+          <div class="hiw-desc" style="color:#888;">Weekly payouts, instant transfers, or manual withdraw via bank, PayPal, or Venmo.</div>
         </div>
       </div>
       <!-- Payout methods -->
@@ -1898,56 +1943,27 @@
           <span style="font-size:18px;">🏦</span><span style="color:#ccc;font-size:13px;font-weight:600;">Bank Transfer</span>
         </div>
         <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:12px 22px;display:flex;align-items:center;gap:10px;">
-          <span style="font-size:18px;">💙</span><span style="color:#ccc;font-size:13px;font-weight:600;">PayPal</span>
+          <svg viewBox="0 0 80 22" width="70" height="18" xmlns="http://www.w3.org/2000/svg"><text x="0" y="17" font-family="Arial,sans-serif" font-weight="900" font-size="17" fill="#4A9BFF">Pay</text><text x="31" y="17" font-family="Arial,sans-serif" font-weight="900" font-size="17" fill="#7BC7FF">Pal</text></svg>
         </div>
         <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:12px 22px;display:flex;align-items:center;gap:10px;">
-          <span style="font-size:18px;">💜</span><span style="color:#ccc;font-size:13px;font-weight:600;">Venmo</span>
+          <svg viewBox="0 0 90 22" width="70" height="18" xmlns="http://www.w3.org/2000/svg"><text x="0" y="17" font-family="Arial,sans-serif" font-weight="900" font-size="17" fill="#59B8FF">venmo</text></svg>
         </div>
         <div style="background:#1a1a1a;border:1px solid rgba(84,240,110,.3);border-radius:12px;padding:12px 22px;display:flex;align-items:center;gap:10px;">
-          <span style="font-size:18px;">⚡</span><span style="color:#54F06E;font-size:13px;font-weight:700;">Instant · No Minimums</span>
+          <span style="font-size:18px;">⚡</span><span style="color:#54F06E;font-size:13px;font-weight:700;">Instant</span>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════ QUOTE ══════════════ -->
-<div class="section">
-  <div class="quote-wrap reveal">
-    <div class="qmark">"</div>
-    <blockquote>Follow'd gives everyday creators — not just mega-influencers — the tools to build real audiences, sell to their fans, and earn from the brands they already love.</blockquote>
-    <div class="qauthor">
-      <div class="qav"><img loading="lazy" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="" /></div>
-      <div>
-        <div class="qname">Chris DeWolfe</div>
-        <div class="qrole">Co-Founder, Reach Labs · Co-Founder, MySpace</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════ BACKERS ══════════════ -->
-<div class="section bg-off">
-  <div class="section-inner" style="text-align:center;">
-    <div class="section-chip reveal">Backed By</div>
-    <h2 class="sh reveal">Built by <em>industry leaders</em></h2>
-    <p class="section-desc reveal" style="margin:0 auto;">Backed by pioneers in social media, gaming, and web3 — the team that built some of the internet's most iconic platforms.</p>
-    <div class="backers-row reveal">
-      <div class="backer"><div class="backer-ico" style="font-size:15px;letter-spacing:-.5px;">RL</div><div><div class="backer-name">Reach Labs</div><div class="backer-sub">Parent Company</div></div></div>
-      <div class="backer"><div class="backer-ico" style="font-size:13px;">RH</div><div><div class="backer-name">Rough House Games</div><div class="backer-sub">Gaming Backer</div></div></div>
-      <div class="backer"><div class="backer-ico" style="font-size:14px;">OW</div><div><div class="backer-name">Overworld</div><div class="backer-sub">Community Backer</div></div></div>
-      <div class="backer"><div class="backer-ico" style="font-size:14px; background:var(--grad);">XT</div><div><div class="backer-name">Xterio</div><div class="backer-sub">Web3 Gaming</div></div></div>
-    </div>
-  </div>
-</div>
 
 <!-- ══════════════ COMPARISON STRIP ══════════════ -->
-<div style="background:#0a0a0a;padding:72px 64px;">
+<div style="background:#0a0a0a;padding:60px 64px;">
   <div class="section-inner" style="max-width:960px;">
     <div style="text-align:center;margin-bottom:40px;" class="reveal">
-      <div class="section-chip" style="background:rgba(84,240,110,.12);color:#54F06E;border-color:rgba(84,240,110,.25);">Why Follow'd</div>
+      <div class="section-chip" style="background:rgba(84,240,110,.12);color:#54F06E;border:1px solid rgba(84,240,110,.25);">Why Follow'd</div>
       <h2 class="sh white" style="color:#fff;">The only platform where<br>your <em style="color:#54F06E;">whole income</em> lives</h2>
-      <p style="color:#888;font-size:15px;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;">Follow'd is built for creators who want to monetize everything — in one place, with no follower minimum.</p>
+      <p style="color:#888;font-size:15px;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;">Follow'd is built for creators who want to monetize everything in one place, with no follower minimum.</p>
     </div>
     <div style="overflow-x:auto;" class="reveal">
       <table style="width:100%;border-collapse:collapse;font-size:14px;color:#fff;">
@@ -2032,7 +2048,7 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Follow'd takes just 10% — one of the lowest rates in the industry. You keep 90% of everything you earn, whether it's from brand campaigns, Club subscriptions, your digital shop, paid calls, or daily tasks. No hidden fees, no surprise deductions.
+          Follow'd takes just 10%, one of the lowest rates in the industry. You keep 90% of everything you earn, whether it's from brand campaigns, Club subscriptions, your digital shop, paid calls, or daily tasks. No hidden fees, no surprise deductions.
         </div>
       </div>
 
@@ -2042,7 +2058,7 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          None at all. Follow'd is built for creators at every stage — whether you have 100 followers or 1 million. You can start earning from brand campaigns, sell in your Club Shop, and offer paid subscriptions from Day 1, regardless of your current audience size.
+          None at all. Follow'd is built for creators at every stage, whether you have 100 followers or 1 million. You can start earning from brand campaigns, sell in your Club Shop, and offer paid subscriptions from Day 1, regardless of your current audience size.
         </div>
       </div>
 
@@ -2052,7 +2068,7 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Payouts are processed weekly and sent directly to your bank account. There's no minimum balance required to withdraw — you get paid as you earn.
+          Payouts are processed weekly and sent directly to your bank account. There's no minimum balance required to withdraw. You get paid as you earn.
         </div>
       </div>
 
@@ -2062,7 +2078,7 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Absolutely. Follow'd works alongside your existing social channels. Many creators use Instagram or TikTok to grow their audience and Follow'd to monetize them. Your Follow'd profile and Club become your home base for earning — no need to choose one or the other.
+          Absolutely. Follow'd works alongside your existing social channels. Many creators use Instagram or TikTok to grow their audience and Follow'd to monetize them. Your Follow'd profile and Club become your home base for earning. No need to choose one or the other.
         </div>
       </div>
 
@@ -2072,7 +2088,7 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Creators from every niche thrive on Follow'd — fitness, fashion, gaming, art, music, cooking, finance, education, lifestyle, and more. Because Follow'd offers multiple earn streams (brand deals, subscriptions, shop, tasks, calls), there's no single "winning" niche. If you have an audience with shared interests, Follow'd works for you.
+          Creators from every niche thrive on Follow'd: fitness, fashion, gaming, art, music, cooking, finance, education, lifestyle, and more. Because Follow'd offers multiple earn streams (brand deals, subscriptions, shop, tasks, calls) there's no single "winning" niche. If you have an audience with shared interests, Follow'd works for you.
         </div>
       </div>
 
@@ -2082,7 +2098,7 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Browse available campaigns from brands like Sephora, Stanley, Lululemon, and more directly in the app. Join the ones that fit your audience and content style. Earn per click, per sale, or per referral — no minimum follower count and no lengthy approval process. Campaigns are refreshed regularly so there's always something new to participate in.
+          Browse available campaigns from brands like Sephora, Stanley, Lululemon, and more directly in the app. Join the ones that fit your audience and content style. Earn per click, per sale, or per referral. No minimum follower count and no lengthy approval process. Campaigns are refreshed regularly so there's always something new to participate in.
         </div>
       </div>
 
@@ -2092,7 +2108,7 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Yes — Follow'd has a full built-in commerce layer. Sell digital downloads (presets, guides, courses, art), physical merchandise, paid 1:1 coaching calls, classes, and event tickets — all directly through your Club Shop. You keep 90% of every sale.
+          Yes, Follow'd has a full built-in commerce layer. Sell digital downloads (presets, guides, courses, art), physical merchandise, paid 1:1 coaching calls, classes, and event tickets — all directly through your Club Shop. You keep 90% of every sale.
         </div>
       </div>
 
@@ -2102,7 +2118,7 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Yes — creating a Follow'd profile and launching your Club is completely free. Follow'd only takes a cut when you earn. There are no monthly fees, no setup costs, and no subscription tiers required to access the platform's core features.
+          Yes, creating a Follow'd profile and launching your Club is completely free. Follow'd only takes a cut when you earn. There are no monthly fees, no setup costs, and no subscription tiers required to access the platform's core features.
         </div>
       </div>
 
@@ -2115,10 +2131,10 @@
 <div class="cta-card-section reveal" id="cta">
   <div class="cta-card">
     <div class="cta-card-logo">F</div>
-    <div style="display:inline-block;background:rgba(25,168,49,.12);color:#19A831;border:1px solid rgba(25,168,49,.3);border-radius:20px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;margin-bottom:14px;position:relative;z-index:1;">🔥 EARLY ACCESS — LIMITED SPOTS</div>
+    <div style="display:inline-block;background:rgba(25,168,49,.12);color:#19A831;border:1px solid rgba(25,168,49,.3);border-radius:20px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;margin-bottom:14px;position:relative;z-index:1;">🔥 EARLY ACCESS · LIMITED SPOTS</div>
     <h2>Start earning<br>from your<br>first post.</h2>
-    <p>Join 50,000+ creators on Follow'd. Post content, build your Club, join brand campaigns — and start getting paid today. Free to join, no follower minimum.</p>
-    <a href="#" class="cta-card-btn">Join Free — No Follower Minimum →</a>
+    <p>Join 50,000+ creators on Follow'd. Post content, build your Club, join brand campaigns, and start getting paid today. Free to join, no follower minimum.</p>
+    <a href="#" class="cta-card-btn">Join Free, No Follower Minimum →</a>
     <div class="cta-card-sub">Free to join · iOS &amp; Android · Earn from Day 1 · No follower minimum</div>
   </div>
 </div>
@@ -2373,7 +2389,8 @@ gsap.from('#feed .reveal-right', {
   scrollTrigger: { trigger: '#feed', start: 'top 85%', once: true }
 });
 gsap.from('.fside-card', {
-  x: 40, opacity: 0, duration: 0.75, stagger: 0.18, ease: 'power3.out',
+  x: 40, duration: 0.75, stagger: 0.18, ease: 'power3.out',
+  clearProps: 'x',
   scrollTrigger: { trigger: '#feed .reveal-right', start: 'top 85%', once: true }
 });
 
@@ -2415,7 +2432,31 @@ window.addEventListener('scroll', () => {
     window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,.07)' : 'none';
 }, { passive: true });
 
-/* ── 17. Refresh ScrollTrigger after images load ── */
+/* ── 17. Club fan-out animation ── */
+gsap.to('#clubFanLeft', {
+  opacity: 1, x: 0, y: 0, rotation: -8,
+  duration: 0.8, ease: 'power3.out',
+  scrollTrigger: { trigger: '#clubs', start: 'top 70%', once: true }
+});
+gsap.to('#clubFanRight', {
+  opacity: 1, x: 0, y: 0, rotation: 8,
+  duration: 0.8, ease: 'power3.out', delay: 0.12,
+  scrollTrigger: { trigger: '#clubs', start: 'top 70%', once: true }
+});
+
+/* ── Creator Tools fan-out animation ── */
+gsap.to('#creatorFanLeft', {
+  opacity: 1, x: 0, y: 0, rotation: -7,
+  duration: 0.8, ease: 'power3.out',
+  scrollTrigger: { trigger: '#creators', start: 'top 70%', once: true }
+});
+gsap.to('#creatorFanRight', {
+  opacity: 1, x: 0, y: 0, rotation: 7,
+  duration: 0.8, ease: 'power3.out', delay: 0.12,
+  scrollTrigger: { trigger: '#creators', start: 'top 70%', once: true }
+});
+
+/* ── 18. Refresh ScrollTrigger after images load ── */
 // Images can shift page height; refresh ensures trigger positions are correct.
 window.addEventListener('load', () => {
   ScrollTrigger.refresh();
