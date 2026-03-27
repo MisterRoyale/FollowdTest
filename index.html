@@ -3,23 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Follow'd — Earn From Your Very First Post. No Follower Minimum.</title>
-  <meta name="description" content="Follow'd is the creator economy platform where any creator — regardless of following size — earns from brand campaigns, subscriptions, digital shop, and daily tasks. Keep 90% of everything you earn." />
+  <!-- Security headers (meta-tag equivalents; also configure these as HTTP headers on your server/CDN) -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <!--
+    RECOMMENDED SERVER-SIDE HTTP HEADERS (add to Vercel/Netlify/Cloudflare config):
+    Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+    Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com https://tools.applemediaservices.com https://play.google.com https://tcgplayer-cdn.tcgplayer.com data:; frame-ancestors 'none';
+    X-Content-Type-Options: nosniff
+    X-Frame-Options: DENY
+    Referrer-Policy: strict-origin-when-cross-origin
+    Permissions-Policy: camera=(), microphone=(), geolocation=()
+  -->
+  <title>Followd — Earn From Your Very First Post. No Follower Minimum.</title>
+  <meta name="description" content="Followd is the creator economy platform where any creator — regardless of following size — earns from brand campaigns, subscriptions, digital shop, and daily tasks. Keep 90% of everything you earn." />
   <!-- Open Graph -->
-  <meta property="og:title" content="Follow'd — The Creator Platform That Pays From Day 1" />
+  <meta property="og:title" content="Followd — The Creator Platform That Pays From Day 1" />
   <meta property="og:description" content="No follower minimum. No gatekeepers. Earn from brand campaigns, subscriptions, digital shop, and fan interactions. Keep 90%." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://followd.com" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&h=630&fit=crop" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Follow'd — The Creator Platform That Pays From Day 1" />
+  <meta name="twitter:title" content="Followd — The Creator Platform That Pays From Day 1" />
   <meta name="twitter:description" content="No follower minimum. Earn from brand campaigns, subscriptions, shop sales, and daily tasks. Keep 90% of every dollar." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&h=630&fit=crop" />
+    <link rel="icon" type="image/png" href="data:image/png;base64,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"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <!-- GSAP + ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- Native scroll (fast) -->
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,11 +58,7 @@
       border-bottom: 1px solid var(--border);
     }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-f {
-      width: 34px; height: 34px; border-radius: 9px; background: var(--black);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 17px; font-weight: 900; color: var(--g1); letter-spacing: -1px;
-    }
+    .nav-f { width: 34px; height: 34px; flex-shrink: 0; background: url('data:image/png;base64,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'); background-size: contain; background-repeat: no-repeat; background-position: center; }
     .nav-name { font-size: 19px; font-weight: 900; color: var(--black); letter-spacing: -0.03em; }
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a { color: var(--gray); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
@@ -61,11 +71,11 @@
 
     /* ─── HERO ─── */
     .hero {
-      padding-top: 64px; min-height: 100vh; display: grid;
-      grid-template-columns: 1fr 1fr; align-items: center;
+      padding-top: 0; min-height: 100vh; display: grid;
+      grid-template-columns: 1.15fr 0.85fr; align-items: center;
       max-width: 1400px; margin: 0 auto; padding-left: 64px; padding-right: 48px; gap: 40px;
     }
-    .hero-left { padding: 60px 0; }
+    .hero-left { padding: 16px 0 40px; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 7px; margin-bottom: 28px;
       background: #f0fff4; border: 1px solid #bbf7d0; border-radius: 100px;
@@ -74,7 +84,7 @@
     .hero-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--g2); display: block; animation: blink 2s infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
     .hero h1 {
-      font-size: clamp(48px, 5.5vw, 82px); font-weight: 900; line-height: 1.0;
+      font-size: clamp(44px, 4.8vw, 72px); font-weight: 900; line-height: 1.05;
       letter-spacing: -0.04em; margin-bottom: 24px; color: var(--black);
     }
     .hero h1 em { font-style: normal; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -105,8 +115,9 @@
 
     /* ─── HERO PHONES ─── */
     .hero-right {
-      position: relative; display: flex; align-items: flex-end; justify-content: center;
-      gap: 16px; padding: 80px 0 40px; height: 100vh; max-height: 860px;
+      position: relative; display: flex; align-items: flex-start; justify-content: center;
+      gap: 16px; padding: 0 0 40px;
+      padding-top: 74px;
     }
     .hphone {
       will-change: transform;
@@ -117,12 +128,25 @@
       aspect-ratio: 9 / 19.5; /* iPhone 17 Pro ratio */
       display: flex; flex-direction: column;
     }
-    .hphone.main { width: 248px; align-self: flex-start; margin-top: 0; }
-    .hphone.side { width: 214px; opacity: 0.65; }
-    .hphone.side2 { width: 214px; opacity: 0.65; }
+    .hphone.main { width: 248px; align-self: center; }
+    .hphone.side { width: 214px; align-self: center; }
+    .hphone.side2 { width: 214px; align-self: center; }
+    /* ── Status bar: main phone (248px) ── */
     .h-status { display: flex; justify-content: space-between; align-items: center; padding: 8px 14px 6px; font-size: 11px; font-weight: 700; color: #111; position: relative; min-height: 36px; }
     .h-island { position: absolute; left: 50%; transform: translateX(-50%); width: 90px; height: 26px; background: #111; border-radius: 20px; pointer-events: none; }
     .h-icons { display: flex; align-items: center; gap: 3px; }
+    .h-icons svg { height: 12px; width: auto; }
+    /* ── Status bar: side phones (214px = 86% of main) ── */
+    .hphone.side .h-status, .hphone.side2 .h-status { font-size: 9px; min-height: 30px; padding: 6px 11px 5px; }
+    .hphone.side .h-island, .hphone.side2 .h-island { width: 76px; height: 22px; }
+    .hphone.side .h-icons, .hphone.side2 .h-icons { gap: 2px; }
+    .hphone.side .h-icons svg, .hphone.side2 .h-icons svg { height: 10px; }
+    /* ── Bottom nav: side phones ── */
+    .hphone.side .phone-nav, .hphone.side2 .phone-nav { padding: 7px 4px 10px; }
+    .hphone.side .pnav-svg, .hphone.side2 .pnav-svg { width: 18px; height: 18px; }
+    .hphone.side .pnav-plus-btn, .hphone.side2 .pnav-plus-btn { width: 38px; height: 38px; }
+    .hphone.side .pnav-plus-btn svg, .hphone.side2 .pnav-plus-btn svg { width: 15px; height: 15px; }
+    .hphone.side .pnav-dot, .hphone.side2 .pnav-dot { width: 3px; height: 3px; }
 
     /* Feed screen */
     .feed-screen { background: #fff; flex: 1; overflow: hidden; }
@@ -244,6 +268,24 @@
     .cgrid-item { aspect-ratio: 1; overflow: hidden; }
     .cgrid-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+    /* ─── REFERRAL BANNER ─── */
+    .referral-banner {
+      position: relative; overflow: hidden;
+      background: linear-gradient(135deg, var(--g1) 0%, var(--g2) 40%, var(--g3) 100%);
+      padding: 32px 40px; text-align: center;
+    }
+    .rb-text {
+      position: relative; z-index: 2;
+      font-size: clamp(20px, 2.5vw, 32px); font-weight: 900; color: #fff;
+      letter-spacing: -0.02em; line-height: 1; white-space: nowrap; margin: 0 auto;
+    }
+    .rb-watermark {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      z-index: 1; pointer-events: none; user-select: none;
+    }
+    .rb-wm-left { left: -20px; transform: translateY(-50%) rotate(-8deg); }
+    .rb-wm-right { right: -20px; transform: translateY(-50%) rotate(8deg); }
+
     /* ─── CREATOR STRIP ─── */
     .creator-strip { padding: 0; overflow: hidden; background: #fff; }
     .strip-label { padding: 56px 64px 24px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--lgray); }
@@ -260,6 +302,7 @@
       background: linear-gradient(0deg, rgba(0,0,0,.75) 0%, transparent 100%);
       padding: 24px 14px 14px;
     }
+    .cc-niche { font-size: 10px; font-weight: 700; color: rgba(84,240,110,0.9); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 3px; }
     .cc-name { font-size: 14px; font-weight: 900; color: #fff; letter-spacing: -0.02em; text-transform: uppercase; }
     .cc-followers { font-size: 11px; color: rgba(255,255,255,.7); font-weight: 500; margin-top: 2px; }
     .cc-earn { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 700; color: var(--g1); background: rgba(0,0,0,.4); border-radius: 20px; padding: 3px 8px; margin-top: 6px; }
@@ -323,12 +366,14 @@
     /* ─── EARN GRID ─── */
     .earn-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
     .earn-card {
-      background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 20px; padding: 28px; transition: all .3s;
+      background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 20px; padding: 28px; padding-top: 0; transition: all .3s; overflow: hidden;
     }
     .earn-card:hover { border-color: rgba(84,240,110,.3); }
     .ecard-icon { font-size: 36px; margin-bottom: 16px; }
+    .ecard-icon.img-icon { font-size: 0; width: 56px; height: 56px; background-size: cover; background-position: center; background-repeat: no-repeat; margin: 0 auto 16px; border-radius: 12px; }
+    .ecard-banner { width:calc(100% + 56px); margin:-28px -28px 18px; height:120px; object-fit:cover; display:block; border-radius:20px 20px 0 0; }
     .ecard-title { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 8px; }
-    .ecard-desc { font-size: 13px; color: #888; line-height: 1.65; margin-bottom: 16px; }
+    .ecard-desc { font-size: 13px; color: #888; line-height: 1.65; margin-bottom: 0; }
     .ecard-val { font-size: 24px; font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
     /* ─── STATS ─── */
@@ -400,13 +445,12 @@
 
     /* ─── PHONE FLOAT ─── */
     @keyframes phoneFloat {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      33% { transform: translateY(-12px) rotate(1.6deg); }
-      66% { transform: translateY(-6px) rotate(-1.2deg); }
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(0px); }
     }
-    .float-a { animation: phoneFloat 6s ease-in-out infinite; }
-    .float-b { animation: phoneFloat 7s ease-in-out infinite 1.2s; }
-    .float-c { animation: phoneFloat 5.5s ease-in-out infinite 2.4s; }
+    .float-a { animation: none; }
+    .float-b { animation: none; }
+    .float-c { animation: none; }
 
     /* ─── WORD REVEAL (Stacked-style color animation) ─── */
     .word-reveal { display: inline-block; }
@@ -418,14 +462,11 @@
     .marquee-track:hover .creator-card { transform: scale(0.98); }
     .marquee-track .creator-card:hover { transform: scale(1.04) !important; }
 
+    /* ─── RESPONSIVE: 1024px (first pass — layout) ─── */
     @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
-      .hero-right { display: none; }
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .section { padding: 64px 24px; }
-      .feat-row { grid-template-columns: 1fr; gap: 48px; }
-      .feat-row.flip { direction: ltr; }
       .feed-visual { grid-template-columns: 1fr; }
       .feed-side-cards { display: none; }
       .hiw-grid { grid-template-columns: 1fr 1fr; }
@@ -441,6 +482,7 @@
     /* ─── BENTO FEATURES GRID ─── */
     .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .bento-span2 { grid-column: span 2; }
+    .bento-span3 { grid-column: span 3; }
     .bento-card {
       background: #fff; border: 1.5px solid #eee; border-radius: 24px;
       overflow: hidden; transition: all .3s;
@@ -452,7 +494,7 @@
       display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
     }
-    .bento-card-body { padding: 20px 24px 24px; }
+    .bento-card-body { padding: 16px 24px 22px; }
     .bento-tag {
       display: inline-block; font-size: 10px; font-weight: 700;
       text-transform: uppercase; letter-spacing: .06em;
@@ -539,10 +581,9 @@
       .float-a, .float-b, .float-c { animation: none !important; }
     }
 
-    /* ─── BENTO + 90% RESPONSIVE ─── */
-    /* ─── 1024px tablet ─── */
+    /* ─── RESPONSIVE: 1024px tablet ─── */
     @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; padding-top: 80px; }
+      .hero { grid-template-columns: 1fr; padding-top: 80px; padding-left: 24px; padding-right: 24px; }
       .hero-right { display: none; }
       .hero-left { text-align: center; }
       .hero h1 { font-size: clamp(40px, 8vw, 58px); }
@@ -553,29 +594,66 @@
       .feat-row.flip { direction: ltr; }
       .bento-grid { grid-template-columns: repeat(2, 1fr); }
       .bento-span2 { grid-column: span 2; }
+      .bento-span3 { grid-column: span 2; }
+      .testimonials-grid { grid-template-columns: 1fr !important; }
+      /* Hide fan-out side cards on tablet — they overflow */
+      .club-fan-card, .creator-fan-card { display: none; }
     }
 
+    /* ─── RESPONSIVE: 768px mobile ─── */
     @media (max-width: 768px) {
       .bento-grid { grid-template-columns: 1fr; }
       .bento-span2 { grid-column: span 1; }
-      .cta-card-section { padding: 48px 24px; }
-      .cta-card { padding: 44px 28px; }
-      /* Dark comparison table: scroll horizontally */
-      [style*="background:#0a0a0a"] .comp-scroll { overflow-x: auto; }
-      /* Earn section payout grid: 2-col on mobile */
+      .bento-span3 { grid-column: span 1; }
+      .cta-card-section { padding: 48px 20px; }
+      .cta-card { padding: 40px 24px; }
+      .comp-section { padding: 48px 20px !important; }
+      .press-bar { padding: 20px 20px !important; }
       .earn-payout-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .section-desc { font-size: 15px; }
+      .feat-phone .hphone { max-width: 220px; }
+      /* Hero chip: allow wrapping on narrow screens */
+      .hero-chip-bar { flex-wrap: wrap; justify-content: center; gap: 6px 4px; }
     }
+
+    /* ─── RESPONSIVE: 480px small mobile ─── */
     @media (max-width: 480px) {
-      .earn-payout-grid { grid-template-columns: 1fr !important; }
-      nav { padding: 0 20px; }
+      nav { padding: 0 16px; }
       .nav-links { display: none; }
+      /* Hide Login on small screens — just show Get Started */
+      .btn-ghost { display: none; }
+      .btn-green { padding: 8px 14px; font-size: 12px; }
+      .section { padding: 48px 16px; }
+      .stats-band { padding: 40px 16px; }
+      .stats-band-inner { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr !important; }
+      .hiw-grid { grid-template-columns: 1fr !important; }
+      .earn-payout-grid { grid-template-columns: 1fr !important; }
+      .earn-cards { grid-template-columns: 1fr; }
+      .cta-section { padding: 56px 16px; }
+      .cta-card-section { padding: 40px 16px; }
+      .comp-section { padding: 40px 16px !important; }
+      /* Hero: tighten up */
+      .hero { padding-left: 16px; padding-right: 16px; }
+      .hero h1 { font-size: clamp(34px, 10vw, 48px); }
+      .hero-sub { font-size: 15px; }
+      .hero-btns { flex-direction: row; align-items: center; justify-content: center; }
+      .hero-btns img { height: 44px !important; }
+      .hero-btns a:last-child img { height: 64px !important; }
+      /* Hero chip bar */
+      .hero-chip-bar { flex-wrap: wrap; justify-content: center; font-size: 11px; padding: 6px 12px; }
+      /* Bento cards */
+      .bento-title { font-size: 18px; }
+      .bento-card-body { padding: 16px 18px 20px; }
+      /* FAQ */
+      .faq-q { font-size: 14px; padding: 18px 0; }
+      /* Section headings */
+      h2.sh { font-size: clamp(28px, 8vw, 42px); }
     }
 
     /* ─── FAQ ─── */
     .faq-wrap { max-width: 760px; margin: 0 auto; }
-    .faq-item {
-      border-bottom: 1px solid #eee; overflow: hidden;
-    }
+    .faq-item { border-bottom: 1px solid #eee; overflow: hidden; }
     .faq-item:last-child { border-bottom: none; }
     .faq-q {
       width: 100%; text-align: left; background: none; border: none; cursor: pointer;
@@ -595,21 +673,13 @@
       font-size: 15px; color: var(--gray); line-height: 1.75; padding: 0;
     }
     .faq-item.open .faq-a { max-height: 300px; padding-bottom: 22px; }
-
-    /* Testimonials responsive */
-    @media (max-width: 1024px) {
-      .testimonials-grid { grid-template-columns: 1fr !important; }
-    }
   </style>
 </head>
 <body>
 
 <!-- ══════════════ NAV ══════════════ -->
 <nav>
-  <a href="#" class="nav-logo">
-    <div class="nav-f">F</div>
-    <span class="nav-name">Follow'd</span>
-  </a>
+  <a href="#" class="nav-logo"><img src="data:image/png;base64,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" width="34" height="34" alt="Followd logo" style="display:block;flex-shrink:0;border-radius:8px;"><img src="data:image/png;base64,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" height="28" alt="Followd" style="display:block;"></a>
   <ul class="nav-links">
     <li><a href="#feed">Feed</a></li>
     <li><a href="#clubs">Clubs</a></li>
@@ -622,32 +692,26 @@
   </div>
 </nav>
 
+<!-- ══════════════ PROMO BANNER ══════════════ -->
+<div style="background:var(--grad);text-align:center;padding:9px 16px;font-size:13px;font-weight:700;color:#fff;letter-spacing:0.01em;margin-top:64px;">
+  Join today and get <strong style="text-decoration:underline;text-underline-offset:2px;">$5 free</strong> in your account! Limited time only! 🎁
+</div>
+
 <!-- ══════════════ HERO ══════════════ -->
 <div class="hero">
   <div class="hero-left reveal-left">
-    <div class="hero-badge"><span></span> The ONLY creator platform with no follower minimum</div>
-    <h1>Any Creator.<br><em>Any Audience Size.</em><br>Real Money.</h1>
-    <div style="display:inline-flex;align-items:center;gap:8px;background:#f0fff4;border:1.5px solid #bbf7d0;border-radius:10px;padding:8px 16px;margin-bottom:16px;font-size:13px;font-weight:700;color:var(--g3);">✓ No follower minimum &nbsp;·&nbsp; ✓ Free to join &nbsp;·&nbsp; ✓ Earn from Day 1</div>
-    <p class="hero-sub">Monetize your content, community, and brand deals in one place. From subscriptions to brand campaigns to your own digital shop, Follow'd helps any creator earn from day one. You keep 90%.</p>
-    <div class="hero-btns">
-      <a href="#cta" class="btn-hero-main">Join Free, No Follower Minimum →</a>
-      <a href="#feed" class="btn-hero-sec">See the Feed</a>
-    </div>
-    <div class="hero-proof">
-      <div class="proof-faces">
-        <div class="proof-face"><img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face" alt="Creator" /></div>
-        <div class="proof-face"><img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" alt="Follow'd creator" /></div>
-        <div class="proof-face"><img loading="lazy" src="https://images.unsplash.com/photo-1517365830460-955ce3be0547?w=64&h=64&fit=crop&crop=face" alt="Follow'd creator" /></div>
-        <div class="proof-face"><img loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=64&h=64&fit=crop&crop=face" alt="Follow'd creator" /></div>
-        <div class="proof-face"><img loading="lazy" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=64&h=64&fit=crop&crop=face" alt="Follow'd creator" /></div>
-      </div>
-      <div class="proof-text"><strong>50,000+</strong> creators already earning · <strong>free to join</strong></div>
+    <h1>The Social App <em>That Pays You.</em></h1>
+    <div class="hero-chip-bar" style="display:inline-flex;align-items:center;gap:8px;background:#f0fff4;border:1.5px solid #bbf7d0;border-radius:10px;padding:8px 16px;margin-bottom:16px;font-size:13px;font-weight:700;color:var(--g3);">✓ 200+ Hobby Communities &nbsp;·&nbsp; ✓ Earn from Day 1 &nbsp;·&nbsp; ✓ Free to Join</div>
+    <p class="hero-sub">The social platform where you discover and share your passions, build a following around what you love, and earn real money doing it.</p>
+    <div class="hero-btns" style="gap:16px;align-items:center;">
+      <a href="https://apps.apple.com/us/app/boon-love-share-earn/id6749582642" target="_blank" rel="noopener"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" style="height:52px;border-radius:8px;" /></a>
+      <a href="https://play.google.com/store/apps/details?id=net.reachlabs.boon&utm_source=na_Med" target="_blank" rel="noopener"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height:76px;margin:-12px 0;" /></a>
     </div>
   </div>
 
   <div class="hero-right">
     <!-- Side phone left: Creator Profile -->
-    <div class="hphone side" style="align-self:flex-start; margin-top:40px;">
+    <div class="hphone side">
       <div class="h-status"><span>9:38</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
       <div class="creator-screen">
         <img loading="lazy" class="creator-banner" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=200&fit=crop" alt="Creator banner" />
@@ -666,12 +730,12 @@
           </div>
         </div>
         <div class="creator-posts-grid">
-          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=200&h=200&fit=crop" alt="" /></div>
-          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&h=200&fit=crop" alt="" /></div>
-          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop" alt="" /></div>
-          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=200&h=200&fit=crop" alt="" /></div>
-          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=200&h=200&fit=crop" alt="" /></div>
-          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=200&h=200&fit=crop" alt="" /></div>
+          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=200&h=200&fit=crop" alt="Gym workout session" /></div>
+          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&h=200&fit=crop" alt="Fresh healthy salad bowl" /></div>
+          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop" alt="Woman doing fitness exercise" /></div>
+          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=200&h=200&fit=crop" alt="Colorful meal plating" /></div>
+          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=200&h=200&fit=crop" alt="Yoga practice outdoors" /></div>
+          <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=200&h=200&fit=crop" alt="Gourmet burger close-up" /></div>
         </div>
       </div>
       <div class="phone-nav">
@@ -707,7 +771,7 @@
       <div class="h-status"><span>9:41</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
       <div class="feed-screen">
         <div class="feed-topbar">
-          <div class="feed-logo">Follow'd</div>
+          <div class="feed-logo"><img src="data:image/png;base64,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" height="14" alt="Followd" style="display:block;"></div>
           <div class="feed-icons">
             <span class="feed-icon">🔍</span>
             <span class="feed-icon">🔔</span>
@@ -715,26 +779,26 @@
         </div>
         <div class="stories-row">
           <div class="story">
-            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt="" /></div>
+            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt="Mia's story" /></div>
             <span>nia.williams</span>
           </div>
           <div class="story">
-            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&crop=face" alt="" /></div>
+            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop&crop=face" alt="Jess's story" /></div>
             <span>priya</span>
           </div>
           <div class="story">
-            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&h=80&fit=crop&crop=face" alt="" /></div>
+            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&h=80&fit=crop&crop=face" alt="Tyler's story" /></div>
             <span>leo</span>
           </div>
           <div class="story">
-            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="" /></div>
+            <div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="Ava's story" /></div>
             <span>sam</span>
           </div>
         </div>
         <!-- Post 1 -->
         <div class="feed-post">
           <div class="post-top">
-            <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop&crop=face" alt="" /></div>
+            <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop&crop=face" alt="Mia avatar" /></div>
             <div class="post-meta">
               <div class="post-author">Nia Williams</div>
               <div class="post-club">🏃 Run Club · <span class="post-time">2h ago</span></div>
@@ -753,13 +817,13 @@
         <!-- Post 2 -->
         <div class="feed-post">
           <div class="post-top">
-            <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=60&h=60&fit=crop&crop=face" alt="" /></div>
+            <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=60&h=60&fit=crop&crop=face" alt="Jess avatar" /></div>
             <div class="post-meta">
               <div class="post-author">Priya Sharma</div>
               <div class="post-club">🎨 Art Studio · <span class="post-time">4h ago</span></div>
             </div>
           </div>
-          <div class="post-img"><img loading="lazy" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop" alt="art post" /></div>
+          <div class="post-img"><img loading="lazy" src="https://images.unsplash.com/photo-1563089145-599997674d42?w=500&h=300&fit=crop" alt="art post" /></div>
           <div class="post-caption">New digital art drop, only 50 editions 🎨✨</div>
           <div class="post-actions">
             <span class="pact">♡ 12.8k</span>
@@ -797,12 +861,12 @@
     </div>
 
     <!-- Side phone right: Clubs -->
-    <div class="hphone side2" style="align-self:flex-start; margin-top:80px;">
+    <div class="hphone side2">
       <div class="h-status"><span>10:14</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
       <div class="club-screen">
         <img loading="lazy" class="club-banner-img" src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=500&h=200&fit=crop" alt="club banner" />
         <div class="club-header" style="position:relative;">
-          <img loading="lazy" class="club-av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="" />
+          <img loading="lazy" class="club-av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Club owner avatar" />
           <div class="club-join-btn">+ Join</div>
           <div class="club-name">Art Studio Club</div>
           <div class="club-sub">4.8k members · 312 posts</div>
@@ -814,14 +878,14 @@
         </div>
         <div class="club-post-card">
           <div class="cpcard-top">
-            <div class="cpcard-av"><img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop&crop=face" alt="" /></div>
+            <div class="cpcard-av"><img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop&crop=face" alt="Post author avatar" /></div>
             <div><div class="cpcard-name">Jade Kim</div><div class="cpcard-time">2h ago</div></div>
           </div>
-          <div class="cpcard-img"><img loading="lazy" src="https://images.unsplash.com/photo-1508614999368-9260051292e5?w=400&h=200&fit=crop" alt="" /></div>
+          <div class="cpcard-img"><img loading="lazy" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=200&fit=crop" alt="Colorful art supplies" /></div>
           <div class="cpcard-text">Behind the scenes of my new collection 🖌️</div>
         </div>
         <div class="locked-card">
-          <img loading="lazy" class="locked-card-img" src="https://images.unsplash.com/photo-1579547621706-1a9c79d5c9f1?w=400&h=200&fit=crop" alt="" />
+          <img loading="lazy" class="locked-card-img" src="https://images.unsplash.com/photo-1579547621706-1a9c79d5c9f1?w=400&h=200&fit=crop" alt="Locked premium content" />
           <div class="locked-overlay">
             <div class="locked-icon">🔒</div>
             <div class="locked-label">Members Only</div>
@@ -862,11 +926,12 @@
 
 <!-- ══════════════ CREATOR STRIP ══════════════ -->
 <div class="creator-strip reveal">
-  <div class="strip-label">Join creators already earning on Follow'd</div>
+  <div class="strip-label">Join creators already earning on Followd</div>
   <div class="strip-scroll">
     <div class="creator-card">
       <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
+        <div class="cc-niche">🏋️ Fitness</div>
         <div class="cc-name">Mia Carter</div>
         <div class="cc-followers">84.2K followers</div>
         <div class="cc-earn">⚡ $4.8k/mo</div>
@@ -875,6 +940,7 @@
     <div class="creator-card">
       <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
+        <div class="cc-niche">🎸 Music</div>
         <div class="cc-name">Carlos Rivera</div>
         <div class="cc-followers">210K followers</div>
         <div class="cc-earn">⚡ $9.2k/mo</div>
@@ -883,6 +949,7 @@
     <div class="creator-card">
       <img loading="lazy" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
+        <div class="cc-niche">🎨 Art</div>
         <div class="cc-name">Jade Kim</div>
         <div class="cc-followers">65K followers</div>
         <div class="cc-earn">⚡ $3.1k/mo</div>
@@ -891,6 +958,7 @@
     <div class="creator-card">
       <img loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
+        <div class="cc-niche">🎮 Gaming</div>
         <div class="cc-name">Alex Torres</div>
         <div class="cc-followers">1.2M followers</div>
         <div class="cc-earn">⚡ $18k/mo</div>
@@ -899,6 +967,7 @@
     <div class="creator-card">
       <img loading="lazy" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
+        <div class="cc-niche">👗 Fashion</div>
         <div class="cc-name">Sofia Rivera</div>
         <div class="cc-followers">320K followers</div>
         <div class="cc-earn">⚡ $11k/mo</div>
@@ -907,6 +976,7 @@
     <div class="creator-card">
       <img loading="lazy" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=560&fit=crop&crop=top" alt="creator" />
       <div class="creator-card-overlay">
+        <div class="cc-niche">📚 Education</div>
         <div class="cc-name">David Park</div>
         <div class="cc-followers">540K followers</div>
         <div class="cc-earn">⚡ $7.6k/mo</div>
@@ -915,17 +985,24 @@
   </div>
 </div>
 
+<!-- ══════════════ REFERRAL BANNER ══════════════ -->
+<div class="referral-banner">
+  <div class="rb-watermark rb-wm-left"><svg viewBox="0 0 80 80" fill="rgba(255,255,255,0.07)" width="120" height="120"><path d="M40 0 L48 28 L80 28 L54 46 L62 76 L40 58 L18 76 L26 46 L0 28 L32 28 Z"/></svg></div>
+  <div class="rb-watermark rb-wm-right"><svg viewBox="0 0 80 80" fill="rgba(255,255,255,0.07)" width="120" height="120"><path d="M40 0 L48 28 L80 28 L54 46 L62 76 L40 58 L18 76 L26 46 L0 28 L32 28 Z"/></svg></div>
+  <h2 class="rb-text">Invite Friends &amp; Take 200% of Followd's Earnings</h2>
+</div>
+
 <!-- ══════════════ TESTIMONIALS ══════════════ -->
 <div class="section bg-off">
   <div class="section-inner">
     <div style="text-align:center;margin-bottom:48px;" class="reveal">
       <div class="section-chip">Creator Stories</div>
-      <h2 class="sh">Creators earning real<br>money on <em>Follow'd</em></h2>
+      <h2 class="sh">Creators earning real<br>money on <em>Followd</em></h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="testimonials-grid">
       <div class="reveal" style="background:#fff;border:1.5px solid #eee;border-radius:24px;padding:32px;transition:border-color .25s,box-shadow .25s,transform .25s cubic-bezier(.23,1,.32,1);">
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop&crop=face" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop&crop=face" alt="Sofia Rivera testimonial photo" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
           <div>
             <div style="font-size:15px;font-weight:800;color:#111;">Mia Carter</div>
             <div style="font-size:12px;color:var(--g2);font-weight:600;">Fitness · 84K followers</div>
@@ -940,7 +1017,7 @@
 
       <div class="reveal" style="background:#fff;border:1.5px solid #eee;border-radius:24px;padding:32px;transition:border-color .25s,box-shadow .25s,transform .25s cubic-bezier(.23,1,.32,1);">
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=face" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=face" alt="Marcus Chen testimonial photo" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
           <div>
             <div style="font-size:15px;font-weight:800;color:#111;">Alex Torres</div>
             <div style="font-size:12px;color:var(--g2);font-weight:600;">Gaming · 1.2M followers</div>
@@ -950,12 +1027,12 @@
             <div style="font-size:11px;color:#aaa;">/ month</div>
           </div>
         </div>
-        <blockquote style="font-size:14px;color:#555;line-height:1.7;margin:0;font-style:italic;">"Follow'd brand campaigns pay 3× better than what I was getting from Twitch sponsorships. I run my Club, my shop, and campaigns all in one place now."</blockquote>
+        <blockquote style="font-size:14px;color:#555;line-height:1.7;margin:0;font-style:italic;">"In my first 30 days I landed 4 brand campaigns — no agency, no pitching. Followd campaigns pay 3× what I was getting from Twitch sponsorships. Six months in, I closed my merch store on another platform and moved everything here."</blockquote>
       </div>
 
       <div class="reveal" style="background:#fff;border:1.5px solid #eee;border-radius:24px;padding:32px;transition:border-color .25s,box-shadow .25s,transform .25s cubic-bezier(.23,1,.32,1);">
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Priya Sharma testimonial photo" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
           <div>
             <div style="font-size:15px;font-weight:800;color:#111;">Jade Kim</div>
             <div style="font-size:12px;color:var(--g2);font-weight:600;">Art · 65K followers</div>
@@ -965,11 +1042,38 @@
             <div style="font-size:11px;color:#aaa;">/ month</div>
           </div>
         </div>
-        <blockquote style="font-size:14px;color:#555;line-height:1.7;margin:0;font-style:italic;">"I sell digital brush packs and presets through my Club Shop and keep 90% of every sale. It's the only platform I've found where the math actually works in my favour."</blockquote>
+        <blockquote style="font-size:14px;color:#555;line-height:1.7;margin:0;font-style:italic;">"I launched my first brush pack with 65K followers and made $800 in the first week. Three months later, recurring shop and subscription income replaced my freelance income entirely. The 90% cut isn't a gimmick — you actually feel it."</blockquote>
       </div>
     </div>
   </div>
 </div>
+
+
+<!-- ══════════════ SOCIAL HOBBIES & CATEGORIES ══════════════ -->
+<div style="position:relative;overflow:hidden;background:#000;">
+  <!-- Full-width cinematic video banner -->
+  <div style="position:relative;width:100%;height:480px;overflow:hidden;">
+    <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.38);" poster="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&h=960&fit=crop&crop=center">
+      <source src="https://videos.pexels.com/video-files/5935470/5935470-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+      <source src="https://videos.pexels.com/video-files/5935470/5935470-hd_1920_1080_25fps.mp4" type="video/mp4" />
+      <source src="https://videos.pexels.com/video-files/8379251/8379251-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+      <source src="https://videos.pexels.com/video-files/8379251/8379251-hd_1920_1080_25fps.mp4" type="video/mp4" />
+    </video>
+    <!-- Gradient overlay for text readability -->
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);"></div>
+    <!-- Content overlay -->
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center;">
+      <div class="section-chip" style="background:rgba(84,240,110,.15);color:#54F06E;border:1px solid rgba(84,240,110,.3);margin-bottom:20px;">Discover</div>
+      <h2 style="font-size:clamp(36px,5vw,62px);font-weight:900;letter-spacing:-0.03em;line-height:1.08;color:#fff;margin-bottom:18px;">Find your people by <em style="font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">hobby</em></h2>
+      <p style="font-size:17px;color:rgba(255,255,255,.75);line-height:1.7;max-width:540px;margin-bottom:32px;">Browse and join communities by interest — fitness, gaming, art, music, cooking, fashion, and hundreds more. Threaded forums, real-time chat, and Reddit-style discussions. Your people are already here.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a href="#clubs" style="display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;background:var(--grad);color:#fff;font-size:14px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(25,168,49,.35);transition:all .2s;">Explore Communities →</a>
+        <a href="#feed" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:12px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);color:#fff;font-size:14px;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.2);transition:all .2s;">See the Feed</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- ══════════════ FEED SECTION ══════════════ -->
 <div class="section" id="feed">
@@ -1005,24 +1109,24 @@
           <div class="h-status"><span>11:27</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
           <div class="feed-screen">
             <div class="feed-topbar">
-              <div class="feed-logo">Follow'd</div>
+              <div class="feed-logo"><img src="data:image/png;base64,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" height="14" alt="Followd" style="display:block;"></div>
               <div class="feed-icons"><span class="feed-icon">🔍</span><span class="feed-icon">🔔</span></div>
             </div>
             <div class="stories-row">
-              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face" alt="" /></div><span>sofia</span></div>
-              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=80&h=80&fit=crop&crop=face" alt="" /></div><span>david</span></div>
-              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&h=80&fit=crop&crop=face" alt="" /></div><span>luna</span></div>
-              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1552058812-6b0a05f3e671?w=80&h=80&fit=crop&crop=face" alt="" /></div><span>omar</span></div>
+              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face" alt="Sofia's story" /></div><span>sofia</span></div>
+              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=80&h=80&fit=crop&crop=face" alt="David's story" /></div><span>david</span></div>
+              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&h=80&fit=crop&crop=face" alt="Luna's story" /></div><span>luna</span></div>
+              <div class="story"><div class="story-ring"><img loading="lazy" src="https://images.unsplash.com/photo-1552058812-6b0a05f3e671?w=80&h=80&fit=crop&crop=face" alt="Omar's story" /></div><span>omar</span></div>
             </div>
             <div class="feed-post">
               <div class="post-top">
-                <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=60&h=60&fit=crop&crop=face" alt="" /></div>
+                <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=60&h=60&fit=crop&crop=face" alt="Sofia avatar" /></div>
                 <div class="post-meta">
                   <div class="post-author">Sofia Rivera</div>
                   <div class="post-club">👗 Fashion Club · <span class="post-time">1h ago</span></div>
                 </div>
               </div>
-              <div class="post-img"><img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&h=300&fit=crop" alt="" /></div>
+              <div class="post-img"><img loading="lazy" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500&h=300&fit=crop&crop=top" alt="Bold fashion editorial portrait" /></div>
               <div class="post-caption">Spring collection is HERE ☀️ Linked in my shop!</div>
               <div class="post-actions">
                 <span class="pact">♡ 58.2k</span><span class="pact">💬 3.4k</span><span class="pact">↗</span>
@@ -1031,13 +1135,13 @@
             </div>
             <div class="feed-post">
               <div class="post-top">
-                <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=60&h=60&fit=crop&crop=face" alt="" /></div>
+                <div class="post-av"><img loading="lazy" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=60&h=60&fit=crop&crop=face" alt="David avatar" /></div>
                 <div class="post-meta">
                   <div class="post-author">David Park</div>
                   <div class="post-club">💪 Fitness Club · <span class="post-time">3h ago</span></div>
                 </div>
               </div>
-              <div class="post-img"><img loading="lazy" src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=500&h=280&fit=crop" alt="" /></div>
+              <div class="post-img"><img loading="lazy" src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=500&h=280&fit=crop" alt="Gym training session" /></div>
               <div class="post-caption">5am club 🌅 Who else? Full workout plan below 👇</div>
               <div class="post-actions">
                 <span class="pact">♡ 21.9k</span><span class="pact">💬 890</span>
@@ -1071,10 +1175,10 @@
         <!-- Post preview cards -->
         <div style="display:flex;flex-direction:column;gap:14px;padding-top:20px;">
           <div class="fside-card">
-            <img loading="lazy" class="fside-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=280&fit=crop" alt="post" />
+            <img loading="lazy" class="fside-card-img" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=280&fit=crop" alt="Beauty tutorial post" />
             <div class="fside-card-body">
               <div class="fside-card-header">
-                <img loading="lazy" class="fside-av" src="https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?w=68&h=68&fit=crop&crop=face" alt="" />
+                <img loading="lazy" class="fside-av" src="https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?w=68&h=68&fit=crop&crop=face" alt="Creator avatar" />
                 <div>
                   <div class="fside-name">Zara Ahmed</div>
                   <div class="fside-club">🎨 Art Studio Club</div>
@@ -1088,10 +1192,10 @@
             </div>
           </div>
           <div class="fside-card">
-            <img loading="lazy" class="fside-card-img" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=280&fit=crop" alt="gaming post" />
+            <img loading="lazy" class="fside-card-img" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=280&fit=crop" alt="Gaming setup" />
             <div class="fside-card-body">
               <div class="fside-card-header">
-                <img loading="lazy" class="fside-av" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=68&h=68&fit=crop&crop=face" alt="" />
+                <img loading="lazy" class="fside-av" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=68&h=68&fit=crop&crop=face" alt="Creator avatar" />
                 <div>
                   <div class="fside-name">Kai Nakamura</div>
                   <div class="fside-club">🎮 Esports Dojo</div>
@@ -1118,11 +1222,11 @@
       <div class="reveal-right">
         <div class="section-chip">Clubs</div>
         <h2 class="sh">Your community.<br><em>Your terms.</em></h2>
-        <p class="section-desc">Build a Club around any interest. Post exclusive content, run a shop, offer memberships, and earn while your community grows.</p>
+        <p class="section-desc">Build a Club around any interest. Post exclusive content, run a shop, offer memberships, host live events, create courses, and earn while your community grows.</p>
         <ul class="check-list">
           <li>
-            <div class="ch-icon">📌</div>
-            <div><div class="ch-title">Posts, Shop &amp; Membership tabs</div><div class="ch-desc">Every Club has dedicated tabs for content, digital goods, and paid member tiers</div></div>
+            <div class="ch-icon">💬</div>
+            <div><div class="ch-title">Chat, Courses, Events & Forum</div><div class="ch-desc">Every Club includes real-time group chat, structured courses, ticketed events, and threaded forums</div></div>
           </li>
           <li>
             <div class="ch-icon">🔒</div>
@@ -1138,7 +1242,7 @@
 
         <!-- Fan-left club card -->
         <div class="club-fan-card club-fan-left" id="clubFanLeft">
-          <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=260&h=160&fit=crop" style="width:100%;height:100px;object-fit:cover;display:block;" />
+          <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=260&h=160&fit=crop" alt="Gaming community" style="width:100%;height:100px;object-fit:cover;display:block;" />
           <div style="padding:10px 12px;">
             <div style="font-size:10px;font-weight:800;color:#111;margin-bottom:2px;">Gaming Squad</div>
             <div style="font-size:9px;color:#888;margin-bottom:8px;">3.1k members · 240 posts</div>
@@ -1148,7 +1252,7 @@
 
         <!-- Fan-right club card -->
         <div class="club-fan-card club-fan-right" id="clubFanRight">
-          <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=260&h=160&fit=crop" style="width:100%;height:100px;object-fit:cover;display:block;" />
+          <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=260&h=160&fit=crop" alt="Music community" style="width:100%;height:100px;object-fit:cover;display:block;" />
           <div style="padding:10px 12px;">
             <div style="font-size:10px;font-weight:800;color:#111;margin-bottom:2px;">Music Trends</div>
             <div style="font-size:9px;color:#888;margin-bottom:8px;">1.8k members · 95 posts</div>
@@ -1161,33 +1265,36 @@
           <div class="club-screen" style="overflow-y:auto;">
             <img loading="lazy" class="club-banner-img" src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&h=250&fit=crop" alt="club banner" style="height:76px;" />
             <div class="club-header" style="position:relative;padding:6px 12px 4px;">
-              <img loading="lazy" class="club-av" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&h=100&fit=crop&crop=face" alt="" />
+              <img loading="lazy" class="club-av" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&h=100&fit=crop&crop=face" alt="Luna's avatar" />
               <div class="club-join-btn">+ Join</div>
               <div class="club-name" style="margin-top:22px;">Emma's Yoga Club</div>
               <div class="club-sub">2.4k members · 186 posts</div>
             </div>
             <div class="club-tabs-row" style="margin-top:2px;">
               <div class="c-tab on">Posts</div>
+              <div class="c-tab">Chat</div>
+              <div class="c-tab">Courses</div>
+              <div class="c-tab">Events</div>
+              <div class="c-tab">Forum</div>
               <div class="c-tab">Shop</div>
-              <div class="c-tab">Membership</div>
             </div>
             <!-- Post 1: public -->
             <div class="club-post-card" style="padding:8px 12px;">
               <div class="cpcard-top">
-                <div class="cpcard-av"><img loading="lazy" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=50&h=50&fit=crop&crop=face" alt="" /></div>
+                <div class="cpcard-av"><img loading="lazy" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=50&h=50&fit=crop&crop=face" alt="Luna's avatar" /></div>
                 <div><div class="cpcard-name">Emma Walsh</div><div class="cpcard-time">1h ago</div></div>
               </div>
-              <div class="cpcard-img"><img loading="lazy" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=200&fit=crop" alt="" style="height:72px;" /></div>
+              <div class="cpcard-img"><img loading="lazy" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=200&fit=crop" alt="Yoga class" style="height:72px;" /></div>
               <div class="cpcard-text">Morning yoga flow, perfect for beginners 🧘‍♀️</div>
             </div>
             <!-- Post 2: locked -->
             <div class="club-post-card" style="padding:8px 12px;border-bottom:none;">
               <div class="cpcard-top">
-                <div class="cpcard-av"><img loading="lazy" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=50&h=50&fit=crop&crop=face" alt="" /></div>
+                <div class="cpcard-av"><img loading="lazy" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=50&h=50&fit=crop&crop=face" alt="Luna's avatar" /></div>
                 <div><div class="cpcard-name">Emma Walsh</div><div class="cpcard-time">3h ago</div></div>
               </div>
               <div class="locked-card" style="margin:0;border-radius:8px;">
-                <img loading="lazy" class="locked-card-img" src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=400&h=200&fit=crop" alt="" style="height:88px;" />
+                <img loading="lazy" class="locked-card-img" src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=400&h=200&fit=crop" alt="Locked dance class content" style="height:88px;" />
                 <div class="locked-overlay">
                   <div class="locked-icon">🔒</div>
                   <div class="locked-label">Members Only</div>
@@ -1285,29 +1392,35 @@
 
         <div class="hphone" style="max-width:260px;width:100%;position:relative;z-index:3;">
           <div class="h-status"><span>11:06</span><div class="h-island"></div><div class="h-icons"><svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2.5" width="3" height="9.5" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="currentColor"><circle cx="7.5" cy="10.5" r="1.5"/><path d="M5 7.8a3.7 3.7 0 0 1 5 0l1.2-1.2A5.4 5.4 0 0 0 7.5 5 5.4 5.4 0 0 0 3.8 6.6z"/><path d="M2.1 4.9a7.7 7.7 0 0 1 10.8 0L14 3.8a9.4 9.4 0 0 0-13 0z" opacity="0.5"/></svg><svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor"><rect x="0.5" y="0.5" width="20" height="11" rx="3" stroke="currentColor" stroke-width="1.1" fill="none" stroke-opacity="0.4"/><rect x="2" y="2" width="14" height="8" rx="1.5"/><path d="M22 4v4a2 2 0 0 0 0-4z" opacity="0.4"/></svg></div></div>
-          <div class="creator-screen">
-            <img loading="lazy" class="creator-banner" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=250&fit=crop" alt="Creator banner" />
-            <div class="creator-info" style="position:relative;">
-              <img loading="lazy" class="creator-av" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=face" alt="" />
-              <div class="creator-name">Alex Torres</div>
-              <div class="creator-bio">Pro gamer · Content creator · Twitch partner 🎮</div>
-              <div class="creator-stats">
-                <div><div class="cstat-val">1.2M</div><div class="cstat-lbl">Followers</div></div>
-                <div><div class="cstat-val">14.8k</div><div class="cstat-lbl">Members</div></div>
-                <div><div class="cstat-val">$18k</div><div class="cstat-lbl">/month</div></div>
-              </div>
-              <div class="creator-btns">
-                <div class="cbtn-follow">Follow</div>
-                <div class="cbtn-msg">Message</div>
+                    <div class="club-screen" style="background:#f9fafb;">
+            <div style="padding:0;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=400&fit=crop" alt="Man working out in gym" style="width:100%;height:140px;object-fit:cover;display:block;" />
+            </div>
+            <div style="padding:14px 12px 10px;">
+              <div style="font-size:13px;font-weight:800;color:#111;margin-bottom:4px;">90-Day Transformation</div>
+              <div style="font-size:10px;color:#888;margin-bottom:12px;">12 lessons · 3.2 hrs · Lifetime access</div>
+              <div style="display:flex;align-items:center;gap:4px;">
+                <span style="font-size:11px;font-weight:700;color:#111;">60%</span>
+                <div style="flex:1;height:6px;background:#eee;border-radius:3px;overflow:hidden;">
+                  <div style="height:100%;width:60%;background:var(--grad);"></div>
+                </div>
               </div>
             </div>
-            <div class="creator-posts-grid">
-              <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=200&h=200&fit=crop" alt="" /></div>
-              <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=200&h=200&fit=crop" alt="" /></div>
-              <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=200&h=200&fit=crop" alt="" /></div>
-              <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=200&h=200&fit=crop" alt="" /></div>
-              <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=200&h=200&fit=crop" alt="" /></div>
-              <div class="cgrid-item"><img loading="lazy" src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=200&h=200&fit=crop" alt="" /></div>
+            <div style="border-bottom:1px solid #f0f0f0;padding:12px 12px 14px;">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:10px;">
+                <div style="background:#f0fff4;border-radius:6px;padding:7px 8px;text-align:center;font-weight:600;color:var(--g2);">✓ Lesson 1</div>
+                <div style="background:#f0fff4;border-radius:6px;padding:7px 8px;text-align:center;font-weight:600;color:var(--g2);">✓ Lesson 2</div>
+                <div style="background:#f0fff4;border-radius:6px;padding:7px 8px;text-align:center;font-weight:600;color:var(--g2);">✓ Lesson 3</div>
+                <div style="background:#f0fff4;border-radius:6px;padding:7px 8px;text-align:center;font-weight:600;color:var(--g2);">✓ Lesson 4</div>
+                <div style="background:#f5f5f5;border-radius:6px;padding:7px 8px;text-align:center;font-weight:600;color:#999;">Lesson 5</div>
+                <div style="background:#f5f5f5;border-radius:6px;padding:7px 8px;text-align:center;font-weight:600;color:#999;">Lesson 6</div>
+                <div style="background:#f5f5f5;border-radius:6px;padding:7px 8px;text-align:center;font-weight:600;color:#999;">Lesson 7</div>
+                <div style="background:#f5f5f5;border-radius:6px;padding:7px 8px;text-align:center;font-weight:600;color:#999;">More...</div>
+              </div>
+            </div>
+            <div style="padding:12px 12px 10px;">
+              <div style="background:var(--grad);color:#fff;border-radius:8px;padding:10px 12px;text-align:center;font-size:11px;font-weight:700;margin-bottom:10px;">Buy Next Class $9.99</div>
+              <div style="font-size:10px;color:#888;text-align:center;">★★★★★ 4.9 (841 reviews)</div>
             </div>
           </div>
           <div class="phone-nav">
@@ -1343,7 +1456,7 @@
     <div style="text-align:center;margin-bottom:56px;" class="reveal">
       <div class="section-chip">Platform Features</div>
       <h2 class="sh">Every tool a creator<br>needs to <em>build & earn</em></h2>
-      <p class="section-desc" style="margin:0 auto;">Follow'd combines a social feed, community platform, and creator economy toolkit. Everything in one app, nothing siloed.</p>
+      <p class="section-desc" style="margin:0 auto;">Followd combines a social feed, community platform, and creator economy toolkit. Everything in one app, nothing siloed.</p>
     </div>
     <div class="bento-grid">
 
@@ -1354,19 +1467,19 @@
         <div class="bento-preview" style="min-height:260px;padding:28px 32px;align-items:center;justify-content:center;">
           <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;max-width:520px;">
             <div style="padding:14px 16px;border-bottom:1px solid #f5f5f5;display:flex;gap:10px;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop&crop=face" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+              <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop&crop=face" alt="Sofia Rivera avatar" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
               <div style="flex:1;min-width:0;">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
                   <div style="font-size:11px;font-weight:700;color:#111;">Sofia Rivera <span style="font-weight:400;color:#aaa;">· 2h ago</span></div>
                   <div style="font-size:9px;font-weight:700;color:var(--g2);background:#f0fff4;border:1px solid #bbf7d0;border-radius:20px;padding:2px 8px;">Members only</div>
                 </div>
-                <img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=520&h=140&fit=crop" style="width:100%;height:90px;object-fit:cover;border-radius:10px;display:block;margin-bottom:8px;" />
+                <img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=520&h=140&fit=crop" alt="Spring outfit picks" style="width:100%;height:90px;object-fit:cover;border-radius:10px;display:block;margin-bottom:8px;" />
                 <div style="font-size:10px;color:#333;margin-bottom:6px;">New outfit picks for spring 🌸 Full haul just dropped for subscribers...</div>
                 <div style="display:flex;gap:16px;font-size:10px;color:#aaa;">❤️ 1.2k &nbsp; 💬 84 &nbsp; 🔗 Share</div>
               </div>
             </div>
             <div style="padding:12px 16px;display:flex;gap:10px;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+              <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Alex Torres avatar" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
               <div style="flex:1;">
                 <div style="font-size:11px;font-weight:700;color:#111;margin-bottom:3px;">Alex Torres <span style="font-weight:400;color:#aaa;">· 4h ago</span></div>
                 <div style="font-size:10px;color:#333;margin-bottom:5px;">Tournament recap + new setup tour 🎮 Drop your questions below...</div>
@@ -1376,15 +1489,14 @@
           </div>
         </div>
         <div class="bento-card-body">
-          <div class="bento-tag">Social Feed</div>
           <div class="bento-title">A Feed Built for Creators</div>
-          <div class="bento-desc">Post photos, videos, and exclusive content directly to your followers. Free posts grow your audience; gated content earns you money. All from one unified feed.</div>
+          <div class="bento-desc">Grow your audience with free posts. Earn money from gated content. One feed, two income streams, no algorithm deciding who sees your work.</div>
         </div>
       </div>
 
       <!-- SUBSCRIPTIONS -->
       <div class="bento-card reveal">
-        <div class="bento-preview" style="min-height:200px;">
+        <div class="bento-preview" style="min-height:260px;">
           <div class="mini-card" style="width:200px;">
             <div style="font-size:11px;font-weight:700;color:#888;margin-bottom:4px;">PREMIUM MEMBERSHIP</div>
             <div style="font-size:24px;font-weight:900;color:#111;">$12<span style="font-size:13px;font-weight:400;color:#aaa;">/mo</span></div>
@@ -1393,9 +1505,8 @@
           </div>
         </div>
         <div class="bento-card-body">
-          <div class="bento-tag">Recurring Income</div>
           <div class="bento-title">Subscriptions</div>
-          <div class="bento-desc">Generate predictable passive income by gating your best content behind monthly memberships. You set the price and keep 90%.</div>
+          <div class="bento-desc">Wake up to recurring revenue. Your biggest fans pay monthly for your best content. You set the price, keep 90%, and build income you can count on.</div>
         </div>
       </div>
 
@@ -1404,16 +1515,15 @@
       <div class="bento-card reveal">
         <div class="bento-preview" style="padding:20px;justify-content:center;">
           <div style="position:relative;border-radius:14px;overflow:hidden;width:100%;">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=180&fit=crop" style="width:100%;height:100px;object-fit:cover;filter:blur(5px) brightness(.85);display:block;border-radius:10px;" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=180&fit=crop" alt="Blurred beach content preview" style="width:100%;height:100px;object-fit:cover;filter:blur(5px) brightness(.85);display:block;border-radius:10px;" />
             <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
               <div style="background:#111;border-radius:11px;padding:8px 16px;font-size:11px;font-weight:700;color:#fff;">🔒 Unlock for $15</div>
             </div>
           </div>
         </div>
         <div class="bento-card-body">
-          <div class="bento-tag">Per-Post</div>
           <div class="bento-title">Pay to View</div>
-          <div class="bento-desc">Lock your best content (tutorials, behind-the-scenes, drops) and charge once to unlock.</div>
+          <div class="bento-desc">Every post can be a payday. Lock tutorials, behind-the-scenes, or drops and let fans pay to unlock instantly.</div>
         </div>
       </div>
 
@@ -1421,7 +1531,7 @@
         <div class="bento-preview" style="padding:18px;align-items:center;flex-direction:column;gap:8px;">
           <div class="mini-card" style="width:100%;padding:10px 12px;">
             <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop&crop=face" style="width:28px;height:28px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+              <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop&crop=face" alt="Creator avatar" style="width:28px;height:28px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
               <div style="background:#f5f5f5;border-radius:10px 10px 10px 2px;padding:7px 10px;font-size:10px;color:#333;line-height:1.4;">Morning routine just dropped 💪 Unlock to see the full video!</div>
             </div>
             <div style="display:flex;gap:8px;align-items:center;justify-content:flex-end;">
@@ -1432,9 +1542,8 @@
           <div style="background:#111;border-radius:9px;padding:6px 12px;font-size:10px;font-weight:700;color:#fff;align-self:flex-end;">🔒 Unlock for $8</div>
         </div>
         <div class="bento-card-body">
-          <div class="bento-tag">Direct</div>
-          <div class="bento-title">Paid DMs</div>
-          <div class="bento-desc">Earn 1-on-1 with your fans. Send unlockable content and accept tips in private messages.</div>
+          <div class="bento-title">Tips & Pay-Per-DMs</div>
+          <div class="bento-desc">Turn every DM into a payday. Fans tip on posts, pay to unlock messages, and connect with you 1-on-1, on your terms, at your price.</div>
         </div>
       </div>
 
@@ -1443,9 +1552,9 @@
           <div class="mini-card" style="width:100%;padding:10px 12px;">
             <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
               <div style="display:flex;">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop&crop=face" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;object-fit:cover;" />
-                <img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop&crop=face" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;margin-left:-7px;object-fit:cover;" />
-                <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;margin-left:-7px;object-fit:cover;" />
+                <img loading="lazy" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=40&h=40&fit=crop&crop=face" alt="Member avatar" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;object-fit:cover;" />
+                <img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop&crop=face" alt="Member avatar" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;margin-left:-7px;object-fit:cover;" />
+                <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Member avatar" style="width:22px;height:22px;border-radius:50%;border:2px solid #fff;margin-left:-7px;object-fit:cover;" />
               </div>
               <div style="font-size:9px;font-weight:700;color:#111;">Fitness Club · 842 members</div>
             </div>
@@ -1454,88 +1563,107 @@
           </div>
         </div>
         <div class="bento-card-body">
-          <div class="bento-tag">Community</div>
           <div class="bento-title">Group Chats</div>
-          <div class="bento-desc">Unite your community with real-time group chats inside your Club. Members connect with you and each other.</div>
+          <div class="bento-desc">Build a community that pays to belong. Your most engaged fans chat, connect, and stick around, driving retention and recurring revenue.</div>
         </div>
       </div>
 
-      <!-- ③ MARKETPLACE span 1 + DIGITAL SHOP wide (span 2) -->
+      <!-- ③ YOUR STOREFRONT — full width (merged Marketplace + Digital Shop + Classes) -->
 
-      <!-- MARKETPLACE -->
-      <div class="bento-card reveal">
-        <div class="bento-preview" style="min-height:230px;padding:20px 18px;">
-          <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.09);width:100%;max-width:240px;">
-            <div style="padding:9px 12px;border-bottom:1px solid #f5f5f5;font-size:9px;font-weight:700;color:#888;letter-spacing:.05em;">MARKETPLACE · TRENDING</div>
-            <div style="padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:5px;">
-              <div style="border-radius:8px;overflow:hidden;border:1px solid #eee;">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=110&h=70&fit=crop" style="width:100%;height:54px;object-fit:cover;display:block;" />
-                <div style="padding:4px 6px;"><div style="font-size:8px;font-weight:700;color:#111;">Minimal Watch</div><div style="font-size:10px;font-weight:900;color:#111;margin-top:1px;">$89</div></div>
-              </div>
-              <div style="border-radius:8px;overflow:hidden;border:1px solid #eee;">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=110&h=70&fit=crop" style="width:100%;height:54px;object-fit:cover;display:block;" />
-                <div style="padding:4px 6px;"><div style="font-size:8px;font-weight:700;color:#111;">Polaroid Pack</div><div style="font-size:10px;font-weight:900;color:#111;margin-top:1px;">$45</div></div>
-              </div>
-              <div style="border-radius:8px;overflow:hidden;border:1px solid #eee;">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=110&h=70&fit=crop" style="width:100%;height:54px;object-fit:cover;display:block;" />
-                <div style="padding:4px 6px;"><div style="font-size:8px;font-weight:700;color:#111;">Nike Drop</div><div style="font-size:10px;font-weight:900;color:#111;margin-top:1px;">$120</div></div>
-              </div>
-              <div style="border-radius:8px;overflow:hidden;border:1px solid #eee;">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=110&h=70&fit=crop" style="width:100%;height:54px;object-fit:cover;display:block;" />
-                <div style="padding:4px 6px;"><div style="font-size:8px;font-weight:700;color:#111;">Retro Shades</div><div style="font-size:10px;font-weight:900;color:#111;margin-top:1px;">$38</div></div>
-              </div>
+      <div class="bento-card bento-span3 reveal">
+        <div class="bento-preview" style="min-height:260px;padding:28px 32px;overflow:hidden;">
+          <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;padding:16px 20px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+              <div style="font-size:11px;font-weight:700;color:#888;letter-spacing:.05em;">YOUR STOREFRONT · 26 PRODUCTS</div>
+              <div style="font-size:9px;font-weight:700;color:var(--g2);background:#f0fff4;border-radius:20px;padding:3px 10px;">View All →</div>
             </div>
-          </div>
-        </div>
-        <div class="bento-card-body">
-          <div class="bento-tag">Shop & Discover</div>
-          <div class="bento-title">Marketplace</div>
-          <div class="bento-desc">Fans browse and buy from creators they follow: digital downloads, merch drops, and exclusive products all in one discoverable place.</div>
-        </div>
-      </div>
-
-      <!-- DIGITAL SHOP -->
-      <div class="bento-card bento-span2 reveal">
-        <div class="bento-preview" style="min-height:230px;padding:28px 32px;align-items:center;justify-content:center;">
-          <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;max-width:520px;padding:14px 16px;">
-            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.05em;margin-bottom:12px;">YOUR SHOP · 14 PRODUCTS</div>
-            <div style="display:flex;gap:10px;">
-              <div style="flex:1;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
-                <div style="background:#f8fbf8;overflow:hidden;height:60px;">
-                  <img loading="lazy" src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=200&h=120&fit=crop" style="width:100%;height:100%;object-fit:cover;display:block;" />
-                </div>
-                <div style="padding:8px 10px;">
-                  <div style="font-size:10px;font-weight:700;color:#111;">Birthday Video</div>
-                  <div style="font-size:9px;color:#888;margin:2px 0;">Personalized · 60 sec</div>
-                  <div style="font-size:13px;font-weight:900;color:#111;margin-top:3px;">$35.00</div>
-                  <div style="background:var(--grad);color:#fff;border-radius:7px;padding:5px 0;text-align:center;font-size:9px;font-weight:700;margin-top:7px;">Buy Now</div>
+            <div style="display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;">
+              <!-- Merch -->
+              <div style="flex-shrink:0;width:130px;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&h=120&fit=crop" alt="Limited edition sneakers" style="width:100%;height:72px;object-fit:cover;display:block;" />
+                <div style="padding:7px 9px;">
+                  <div style="font-size:8px;font-weight:700;letter-spacing:.04em;color:var(--g2);margin-bottom:2px;">MERCH</div>
+                  <div style="font-size:10px;font-weight:700;color:#111;">Limited Edition Kicks</div>
+                  <div style="font-size:12px;font-weight:900;color:#111;margin-top:2px;">$120</div>
+                  <div style="background:var(--grad);color:#fff;border-radius:6px;padding:4px 0;text-align:center;font-size:8px;font-weight:700;margin-top:5px;">Buy Now</div>
                 </div>
               </div>
-              <div style="flex:1;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
-                <div style="background:#f8fbf8;padding:12px;text-align:center;font-size:24px;">🎧</div>
-                <div style="padding:8px 10px;">
+              <!-- Course -->
+              <div style="flex-shrink:0;width:130px;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=200&h=120&fit=crop" alt="Fitness training course" style="width:100%;height:72px;object-fit:cover;display:block;" />
+                <div style="padding:7px 9px;">
+                  <div style="font-size:8px;font-weight:700;letter-spacing:.04em;color:#e67e22;margin-bottom:2px;">COURSE</div>
+                  <div style="font-size:10px;font-weight:700;color:#111;">90-Day Fitness Program</div>
+                  <div style="font-size:12px;font-weight:900;color:#111;margin-top:2px;">$129</div>
+                  <div style="background:var(--grad);color:#fff;border-radius:6px;padding:4px 0;text-align:center;font-size:8px;font-weight:700;margin-top:5px;">Enrol</div>
+                </div>
+              </div>
+              <!-- Digital Download -->
+              <div style="flex-shrink:0;width:130px;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
+                <div style="background:#f3f0ff;padding:16px;text-align:center;height:72px;display:flex;align-items:center;justify-content:center;"><span style="font-size:32px;">🎵</span></div>
+                <div style="padding:7px 9px;">
+                  <div style="font-size:8px;font-weight:700;letter-spacing:.04em;color:#8e44ad;margin-bottom:2px;">DIGITAL</div>
                   <div style="font-size:10px;font-weight:700;color:#111;">Beat Pack Vol.3</div>
-                  <div style="font-size:9px;color:#888;margin:2px 0;">10 tracks · WAV + MP3</div>
-                  <div style="font-size:13px;font-weight:900;color:#111;margin-top:3px;">$49.00</div>
-                  <div style="background:var(--grad);color:#fff;border-radius:7px;padding:5px 0;text-align:center;font-size:9px;font-weight:700;margin-top:7px;">Buy Now</div>
+                  <div style="font-size:12px;font-weight:900;color:#111;margin-top:2px;">$49</div>
+                  <div style="background:var(--grad);color:#fff;border-radius:6px;padding:4px 0;text-align:center;font-size:8px;font-weight:700;margin-top:5px;">Buy Now</div>
                 </div>
               </div>
-              <div style="flex:1;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
-                <div style="background:#f8fbf8;padding:12px;text-align:center;font-size:24px;">📈</div>
-                <div style="padding:8px 10px;">
-                  <div style="font-size:10px;font-weight:700;color:#111;">Trading Stocks PDF</div>
-                  <div style="font-size:9px;color:#888;margin:2px 0;">48-page course</div>
-                  <div style="font-size:13px;font-weight:900;color:#111;margin-top:3px;">$29.00</div>
-                  <div style="background:var(--grad);color:#fff;border-radius:7px;padding:5px 0;text-align:center;font-size:9px;font-weight:700;margin-top:7px;">Buy Now</div>
+              <!-- Service -->
+              <div style="flex-shrink:0;width:130px;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=200&h=120&fit=crop" alt="Birthday shoutout service" style="width:100%;height:72px;object-fit:cover;display:block;" />
+                <div style="padding:7px 9px;">
+                  <div style="font-size:8px;font-weight:700;letter-spacing:.04em;color:#e74c3c;margin-bottom:2px;">SERVICE</div>
+                  <div style="font-size:10px;font-weight:700;color:#111;">Birthday Shoutout</div>
+                  <div style="font-size:12px;font-weight:900;color:#111;margin-top:2px;">$35</div>
+                  <div style="background:var(--grad);color:#fff;border-radius:6px;padding:4px 0;text-align:center;font-size:8px;font-weight:700;margin-top:5px;">Book</div>
+                </div>
+              </div>
+              <!-- Class -->
+              <div style="flex-shrink:0;width:130px;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
+                <div style="background:#fff5eb;padding:16px;text-align:center;height:72px;display:flex;align-items:center;justify-content:center;"><span style="font-size:32px;">🎨</span></div>
+                <div style="padding:7px 9px;">
+                  <div style="font-size:8px;font-weight:700;letter-spacing:.04em;color:#e67e22;margin-bottom:2px;">CLASS</div>
+                  <div style="font-size:10px;font-weight:700;color:#111;">Watercolor 101</div>
+                  <div style="font-size:12px;font-weight:900;color:#111;margin-top:2px;">$59</div>
+                  <div style="background:var(--grad);color:#fff;border-radius:6px;padding:4px 0;text-align:center;font-size:8px;font-weight:700;margin-top:5px;">Enrol</div>
+                </div>
+              </div>
+              <!-- Preset -->
+              <div style="flex-shrink:0;width:130px;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=200&h=120&fit=crop" alt="Lightroom preset pack" style="width:100%;height:72px;object-fit:cover;display:block;" />
+                <div style="padding:7px 9px;">
+                  <div style="font-size:8px;font-weight:700;letter-spacing:.04em;color:#8e44ad;margin-bottom:2px;">DIGITAL</div>
+                  <div style="font-size:10px;font-weight:700;color:#111;">Lightroom Presets</div>
+                  <div style="font-size:12px;font-weight:900;color:#111;margin-top:2px;">$19</div>
+                  <div style="background:var(--grad);color:#fff;border-radius:6px;padding:4px 0;text-align:center;font-size:8px;font-weight:700;margin-top:5px;">Buy Now</div>
+                </div>
+              </div>
+              <!-- Collectible Card -->
+              <div style="flex-shrink:0;width:130px;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
+                <div style="width:100%;height:72px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#7b2ff7 0%,#c471f5 50%,#5b86e5 100%);"><img loading="lazy" src="https://tcgplayer-cdn.tcgplayer.com/product/42347_in_200x200.jpg" alt="Mewtwo Base Set Pokemon card" style="height:64px;object-fit:contain;border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,.3);" /></div>
+                <div style="padding:7px 9px;">
+                  <div style="font-size:8px;font-weight:700;letter-spacing:.04em;color:#7b2ff7;margin-bottom:2px;">COLLECTIBLE</div>
+                  <div style="font-size:10px;font-weight:700;color:#111;">Mewtwo - Base Set</div>
+                  <div style="font-size:12px;font-weight:900;color:#111;margin-top:2px;">$55</div>
+                  <div style="background:var(--grad);color:#fff;border-radius:6px;padding:4px 0;text-align:center;font-size:8px;font-weight:700;margin-top:5px;">Buy Now</div>
+                </div>
+              </div>
+              <!-- Group Chat Access -->
+              <div style="flex-shrink:0;width:130px;border:1.5px solid #eee;border-radius:12px;overflow:hidden;">
+                <div style="background:linear-gradient(135deg,#e0f7fa 0%,#4dd0e1 100%);padding:10px;text-align:center;height:72px;display:flex;align-items:center;justify-content:center;"><span style="font-size:32px;">💬</span></div>
+                <div style="padding:7px 9px;">
+                  <div style="font-size:8px;font-weight:700;letter-spacing:.04em;color:#00838f;margin-bottom:2px;">ACCESS</div>
+                  <div style="font-size:10px;font-weight:700;color:#111;">VIP Group Chat</div>
+                  <div style="font-size:12px;font-weight:900;color:#111;margin-top:2px;">$15/mo</div>
+                  <div style="background:var(--grad);color:#fff;border-radius:6px;padding:4px 0;text-align:center;font-size:8px;font-weight:700;margin-top:5px;">Join</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="bento-card-body">
-          <div class="bento-tag">Digital Commerce</div>
-          <div class="bento-title">Digital Shop</div>
-          <div class="bento-desc">Sell presets, guides, courses, art, beats, and templates as digital downloads, directly from your Club Shop. You keep 90%.</div>
+          <div class="bento-title">Your Storefront</div>
+          <div class="bento-desc">One shop, every revenue stream. Sell merch, courses, collectibles, group chat access, and more. Launch in minutes, keep 90% of every sale.</div>
         </div>
       </div>
 
@@ -1546,7 +1674,7 @@
         <div class="bento-preview" style="min-height:230px;padding:28px 32px;align-items:center;justify-content:center;">
           <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;max-width:520px;">
             <div style="position:relative;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=520&h=160&fit=crop" style="width:100%;height:120px;object-fit:cover;display:block;" />
+              <img loading="lazy" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=520&h=160&fit=crop" alt="Live concert stream" style="width:100%;height:120px;object-fit:cover;display:block;" />
               <div style="position:absolute;top:10px;left:12px;background:red;color:#fff;font-size:10px;font-weight:800;border-radius:5px;padding:2px 8px;letter-spacing:.04em;">● LIVE</div>
               <div style="position:absolute;bottom:10px;right:12px;background:rgba(0,0,0,.6);color:#fff;font-size:10px;font-weight:700;border-radius:20px;padding:3px 10px;">👁 2,841 watching</div>
             </div>
@@ -1564,9 +1692,8 @@
           </div>
         </div>
         <div class="bento-card-body">
-          <div class="bento-tag">Live Content</div>
           <div class="bento-title">Livestreaming</div>
-          <div class="bento-desc">Go live with your fans in real time. Accept tips during the stream, gate HD access for subscribers, and keep the replay monetised after.</div>
+          <div class="bento-desc">Go live and get paid in real time. Fans tip during the stream, subscribers get HD access, and replays keep earning long after you sign off.</div>
         </div>
       </div>
 
@@ -1575,7 +1702,7 @@
           <div class="mini-card" style="width:210px;">
             <div style="display:flex;gap:10px;align-items:center;">
               <div style="width:44px;height:44px;background:#fafafa;border-radius:10px;overflow:hidden;flex-shrink:0;">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=88&h=88&fit=crop" style="width:100%;height:100%;object-fit:cover;" />
+                <img loading="lazy" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=88&h=88&fit=crop" alt="Custom branded t-shirt" style="width:100%;height:100%;object-fit:cover;" />
               </div>
               <div>
                 <div style="font-size:11px;font-weight:700;color:#111;">Limited Merch Drop</div>
@@ -1587,9 +1714,8 @@
           </div>
         </div>
         <div class="bento-card-body">
-          <div class="bento-tag">Physical Commerce</div>
           <div class="bento-title">Physical Goods</div>
-          <div class="bento-desc">Drop merch, prints, or physical products to your fans. The built-in shop handles orders, payments, and fulfilment with no third party needed.</div>
+          <div class="bento-desc">Drop merch, prints, or physical products directly to your fans. Orders, payments, and fulfillment all handled for you, no third party needed.</div>
         </div>
       </div>
 
@@ -1609,34 +1735,8 @@
           </div>
         </div>
         <div class="bento-card-body">
-          <div class="bento-tag">1:1 Coaching</div>
           <div class="bento-title">Paid Calls</div>
-          <div class="bento-desc">Offer private coaching, consultations, or fan chats. Fans book directly in the app. You set your rate and schedule.</div>
-        </div>
-      </div>
-
-      <div class="bento-card bento-span2 reveal">
-        <div class="bento-preview" style="min-height:210px;padding:28px 32px;align-items:center;justify-content:center;">
-          <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;max-width:520px;padding:14px 16px;">
-            <div style="display:flex;gap:14px;align-items:flex-start;">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&h=200&fit=crop" style="width:140px;height:105px;object-fit:cover;border-radius:10px;flex-shrink:0;" />
-              <div style="flex:1;">
-                <div style="font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--g2);background:#f0fff4;border-radius:20px;padding:2px 9px;display:inline-block;margin-bottom:7px;">BESTSELLER</div>
-                <div style="font-size:13px;font-weight:800;color:#111;line-height:1.3;margin-bottom:5px;">90-Day Transformation Program</div>
-                <div style="font-size:10px;color:#888;margin-bottom:9px;">12 lessons · 3.2 hrs · Lifetime access</div>
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-                  <div style="font-size:16px;font-weight:900;color:#111;">$129</div>
-                  <div style="font-size:10px;font-weight:700;color:var(--g2);">4.9 ★ <span style="font-weight:400;color:#aaa;">(841)</span></div>
-                </div>
-                <div style="background:var(--grad);color:#fff;border-radius:8px;padding:6px 14px;font-size:10px;font-weight:700;display:inline-block;">Enrol Now</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bento-card-body">
-          <div class="bento-tag">Education</div>
-          <div class="bento-title">Classes & Courses</div>
-          <div class="bento-desc">Turn your expertise into structured courses. Video lessons, quizzes, and lifetime access. Sell once, earn forever. Keep 90%.</div>
+          <div class="bento-desc">Monetize your expertise one call at a time. Fans book coaching, consultations, or chats directly in the app. You set the rate and schedule.</div>
         </div>
       </div>
 
@@ -1656,48 +1756,41 @@
           </div>
         </div>
         <div class="bento-card-body">
-          <div class="bento-tag">Events</div>
           <div class="bento-title">Live Events</div>
-          <div class="bento-desc">Host ticketed live events: virtual masterclasses, workshops, or IRL meetups. Sell tickets and manage RSVPs all from the app.</div>
+          <div class="bento-desc">Fill seats and sell tickets to masterclasses, workshops, or IRL meetups. Manage RSVPs, send reminders, and stream to attendees, all from the app.</div>
         </div>
       </div>
 
-      <div class="bento-card bento-span2 reveal">
-        <div class="bento-preview" style="padding:28px 32px;align-items:center;justify-content:center;">
-          <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(0,0,0,.1);width:100%;max-width:520px;padding:14px 16px;">
-            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.05em;margin-bottom:12px;">YOUR PROMO CODES · 3 ACTIVE</div>
-            <div style="display:flex;gap:10px;">
-              <div style="flex:1;border:1.5px dashed #bbf7d0;border-radius:12px;padding:12px 14px;">
-                <div style="font-size:16px;font-weight:900;color:var(--g2);margin-bottom:4px;">WELCOME30</div>
-                <div style="font-size:10px;color:#888;margin-bottom:7px;">30% off first month</div>
-                <div style="display:flex;align-items:center;justify-content:space-between;">
-                  <div style="font-size:9px;color:#aaa;">342 uses</div>
-                  <div style="font-size:9px;font-weight:700;color:var(--g2);background:#f0fff4;border-radius:20px;padding:2px 7px;">Active</div>
-                </div>
+      <div class="bento-card reveal">
+        <div class="bento-preview" style="padding:18px;">
+          <div class="mini-card" style="width:100%;padding:10px 12px;">
+            <div style="font-size:9px;font-weight:700;color:#888;letter-spacing:.05em;margin-bottom:10px;">PROMO CODES</div>
+            <div style="border:1.5px dashed #bbf7d0;border-radius:10px;padding:9px 11px;margin-bottom:7px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <div style="font-size:13px;font-weight:900;color:var(--g2);">WELCOME30</div>
+                <div style="font-size:8px;font-weight:700;color:var(--g2);background:#f0fff4;border-radius:20px;padding:2px 6px;">Active</div>
               </div>
-              <div style="flex:1;border:1.5px dashed #eee;border-radius:12px;padding:12px 14px;">
-                <div style="font-size:16px;font-weight:900;color:#111;margin-bottom:4px;">FREEMONTH</div>
-                <div style="font-size:10px;color:#888;margin-bottom:7px;">3-day free trial</div>
-                <div style="display:flex;align-items:center;justify-content:space-between;">
-                  <div style="font-size:9px;color:#aaa;">891 uses</div>
-                  <div style="font-size:9px;font-weight:700;color:#888;background:#f5f5f5;border-radius:20px;padding:2px 7px;">Active</div>
-                </div>
+              <div style="font-size:9px;color:#888;margin-top:2px;">30% off · 342 uses</div>
+            </div>
+            <div style="border:1.5px dashed #eee;border-radius:10px;padding:9px 11px;margin-bottom:7px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <div style="font-size:13px;font-weight:900;color:#111;">FREEMONTH</div>
+                <div style="font-size:8px;font-weight:700;color:#888;background:#f5f5f5;border-radius:20px;padding:2px 6px;">Active</div>
               </div>
-              <div style="flex:1;border:1.5px dashed #eee;border-radius:12px;padding:12px 14px;opacity:.55;">
-                <div style="font-size:16px;font-weight:900;color:#111;margin-bottom:4px;">SUMMER20</div>
-                <div style="font-size:10px;color:#888;margin-bottom:7px;">20% off, seasonal</div>
-                <div style="display:flex;align-items:center;justify-content:space-between;">
-                  <div style="font-size:9px;color:#aaa;">128 uses</div>
-                  <div style="font-size:9px;font-weight:700;color:#aaa;background:#f5f5f5;border-radius:20px;padding:2px 7px;">Expired</div>
-                </div>
+              <div style="font-size:9px;color:#888;margin-top:2px;">Free trial · 891 uses</div>
+            </div>
+            <div style="border:1.5px dashed #eee;border-radius:10px;padding:9px 11px;opacity:.5;">
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <div style="font-size:13px;font-weight:900;color:#111;">SUMMER20</div>
+                <div style="font-size:8px;font-weight:700;color:#aaa;background:#f5f5f5;border-radius:20px;padding:2px 6px;">Expired</div>
               </div>
+              <div style="font-size:9px;color:#888;margin-top:2px;">20% off · 128 uses</div>
             </div>
           </div>
         </div>
         <div class="bento-card-body">
-          <div class="bento-tag">Growth Tool</div>
           <div class="bento-title">Discounts & Promos</div>
-          <div class="bento-desc">Create custom discount codes and free trials to convert new fans into paying subscribers. Run limited-time campaigns to accelerate growth.</div>
+          <div class="bento-desc">Turn curious fans into paying subscribers with custom promo codes and free trials. Run limited-time campaigns to accelerate growth.</div>
         </div>
       </div>
 
@@ -1817,7 +1910,7 @@
       <div class="reveal-left">
         <div class="section-chip white">Creator Revenue</div>
         <h2 class="sh white">You keep <em>90%</em><br>of everything<br>you earn.</h2>
-        <p class="section-desc white">Follow'd takes just 10%, leaving more in your pocket from every subscription, brand deal, shop sale, and paid call than on any competing platform.</p>
+        <p class="section-desc white">Followd takes just 10%, leaving more in your pocket from every subscription, brand deal, shop sale, and paid call than on any competing platform.</p>
         <div style="display:flex;gap:14px;margin-top:8px;">
           <div style="background:#1a1a1a;border:1px solid rgba(84,240,110,.3);border-radius:16px;padding:22px 24px;flex:1;">
             <div style="font-size:36px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">90%</div>
@@ -1834,7 +1927,7 @@
           <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#555;margin-bottom:22px;">Your take on $10,000 in revenue</div>
           <div class="earn-bars">
             <div class="earn-bar-row">
-              <div class="earn-bar-lbl hi">Follow'd</div>
+              <div class="earn-bar-lbl hi">Followd</div>
               <div class="earn-bar-bg"><div class="earn-bar-fill ebf-green" style="width:90%;">$9,000</div></div>
             </div>
             <div class="earn-bar-row">
@@ -1866,45 +1959,39 @@
 <div class="section bg-black" id="earn">
   <div class="section-inner">
     <div class="reveal" style="text-align:center;margin-bottom:16px;"><div class="section-chip white">Earn</div></div>
-    <h2 class="sh white reveal" style="text-align:center;max-width:700px;margin:0 auto 16px;">Every way you earn on Follow'd —<br><em>and get paid fast</em></h2>
+    <h2 class="sh white reveal" style="text-align:center;max-width:700px;margin:0 auto 16px;">Every way you earn on Followd —<br><em>and get paid fast</em></h2>
     <p class="section-desc white reveal" style="margin:0 auto 48px;text-align:center;max-width:600px;">Stack multiple revenue streams simultaneously. Your dollar balance updates in real time and you can cash out on your schedule. No minimums, no holds.</p>
 
     <div class="earn-cards">
       <div class="earn-card reveal">
-        <div class="ecard-icon">📣</div>
+        <img class="ecard-banner" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=240&fit=crop&crop=center" alt="Brand Campaigns" loading="lazy" />
         <div class="ecard-title">Brand Campaigns</div>
-        <div class="ecard-desc">Join campaigns from top brands. Earn per click, per sale, or per referral. Available to any creator regardless of audience size.</div>
-        <div class="ecard-val">Up to $2,001 / week</div>
+        <div class="ecard-desc">Brands post paid campaigns inside Followd. You browse, accept the ones that fit your niche, post the content, and earn — per click, per sale, or flat-fee. No agency. No minimum followers.</div>
       </div>
       <div class="earn-card reveal">
-        <div class="ecard-icon">🔥</div>
+        <img class="ecard-banner" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=240&fit=crop&crop=center" alt="Daily Cash Tasks" loading="lazy" />
         <div class="ecard-title">Daily Cash Tasks</div>
-        <div class="ecard-desc">Post content, build your Club, invite friends, and complete daily challenges. Each earns real dollars credited instantly to your balance.</div>
-        <div class="ecard-val">$1 to $100 per task</div>
+        <div class="ecard-desc">Complete simple daily actions — post a photo, hit a milestone, spin the prize wheel, or build streaks for bigger payouts. Each task has a dollar value shown upfront.</div>
       </div>
       <div class="earn-card reveal">
-        <div class="ecard-icon">👥</div>
+        <img class="ecard-banner" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&h=240&fit=crop&crop=center" alt="Referrals" loading="lazy" />
         <div class="ecard-title">Referrals</div>
-        <div class="ecard-desc">Invite friends to Follow'd and earn up to $100 per referral. Share your link and your balance grows every time someone signs up.</div>
-        <div class="ecard-val">Up to $100 / referral</div>
+        <div class="ecard-desc">Invite friends to Followd and earn per referral. Share your link and your balance grows every time someone signs up.</div>
       </div>
       <div class="earn-card reveal">
-        <div class="ecard-icon">💳</div>
+        <img class="ecard-banner" src="https://images.unsplash.com/photo-1563207153-f403bf289096?w=600&h=240&fit=crop&crop=center" alt="Cashback Rewards" loading="lazy" />
         <div class="ecard-title">Cashback Rewards</div>
-        <div class="ecard-desc">Shop through Follow'd partner brands and earn cashback on every purchase. Real money back in your creator balance automatically.</div>
-        <div class="ecard-val">Up to 15% cashback</div>
+        <div class="ecard-desc">Shop through Followd partner brands and earn cashback on every purchase. Real money back in your creator balance automatically.</div>
       </div>
       <div class="earn-card reveal">
-        <div class="ecard-icon">🎮</div>
+        <img class="ecard-banner" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&h=240&fit=crop&crop=center" alt="Play Games" loading="lazy" />
         <div class="ecard-title">Play Games</div>
         <div class="ecard-desc">Earn real cash by playing sponsored in-app games and challenges. The more you play, the more you stack. No skill required to start.</div>
-        <div class="ecard-val">$0.50 to $50 per game</div>
       </div>
       <div class="earn-card reveal">
-        <div class="ecard-icon">🤝</div>
+        <img class="ecard-banner" src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=600&h=240&fit=crop&crop=center" alt="Fan Interactions" loading="lazy" />
         <div class="ecard-title">Fan Interactions</div>
         <div class="ecard-desc">Get tipped by fans on posts, earn when followers share your content through sponsored campaigns, and collect bonuses for engagement milestones.</div>
-        <div class="ecard-val">Earns on every action</div>
       </div>
     </div>
 
@@ -1918,7 +2005,7 @@
       <div class="earn-payout-grid hiw-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:960px;margin:0 auto;">
         <div class="hiw-card reveal" style="background:#111;border:1px solid #1e1e1e;">
           <div class="hiw-num" style="color:#54F06E;">Step 01</div>
-          <div class="hiw-title" style="color:#fff;">Download Follow'd</div>
+          <div class="hiw-title" style="color:#fff;">Download Followd</div>
           <div class="hiw-desc" style="color:#888;">Sign up in under 60 seconds. Free on iOS and Android. No followers required.</div>
         </div>
         <div class="hiw-card reveal" style="background:#111;border:1px solid #1e1e1e;">
@@ -1958,19 +2045,19 @@
 
 
 <!-- ══════════════ COMPARISON STRIP ══════════════ -->
-<div style="background:#0a0a0a;padding:60px 64px;">
+<div class="comp-section" style="background:#0a0a0a;padding:60px 64px;">
   <div class="section-inner" style="max-width:960px;">
     <div style="text-align:center;margin-bottom:40px;" class="reveal">
-      <div class="section-chip" style="background:rgba(84,240,110,.12);color:#54F06E;border:1px solid rgba(84,240,110,.25);">Why Follow'd</div>
+      <div class="section-chip" style="background:rgba(84,240,110,.12);color:#54F06E;border:1px solid rgba(84,240,110,.25);">Why Followd</div>
       <h2 class="sh white" style="color:#fff;">The only platform where<br>your <em style="color:#54F06E;">whole income</em> lives</h2>
-      <p style="color:#888;font-size:15px;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;">Follow'd is built for creators who want to monetize everything in one place, with no follower minimum.</p>
+      <p style="color:#888;font-size:15px;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;">Followd is built for creators who want to monetize everything in one place, with no follower minimum.</p>
     </div>
     <div style="overflow-x:auto;" class="reveal">
       <table style="width:100%;border-collapse:collapse;font-size:14px;color:#fff;">
         <thead>
           <tr>
             <th style="padding:14px 18px;text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#555;border-bottom:1px solid #1e1e1e;min-width:180px;">Earn Method</th>
-            <th style="padding:14px 14px;text-align:center;font-size:13px;font-weight:800;color:#54F06E;border-bottom:2px solid #54F06E;background:rgba(84,240,110,.06);">Follow'd</th>
+            <th style="padding:14px 14px;text-align:center;font-size:13px;font-weight:800;color:#54F06E;border-bottom:2px solid #54F06E;background:rgba(84,240,110,.06);">Followd</th>
             <th style="padding:14px 14px;text-align:center;font-size:12px;font-weight:600;color:#555;border-bottom:1px solid #1e1e1e;">Patreon</th>
             <th style="padding:14px 14px;text-align:center;font-size:12px;font-weight:600;color:#555;border-bottom:1px solid #1e1e1e;">Instagram</th>
             <th style="padding:14px 14px;text-align:center;font-size:12px;font-weight:600;color:#555;border-bottom:1px solid #1e1e1e;">TikTok</th>
@@ -2044,11 +2131,11 @@
 
       <div class="faq-item open">
         <button class="faq-q" aria-expanded="false">
-          What percentage does Follow'd take?
+          What percentage does Followd take?
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Follow'd takes just 10%, one of the lowest rates in the industry. You keep 90% of everything you earn, whether it's from brand campaigns, Club subscriptions, your digital shop, paid calls, or daily tasks. No hidden fees, no surprise deductions.
+          Followd takes just 10%, one of the lowest rates in the industry. You keep 90% of everything you earn, whether it's from brand campaigns, Club subscriptions, your digital shop, paid calls, or daily tasks. No hidden fees, no surprise deductions.
         </div>
       </div>
 
@@ -2058,7 +2145,7 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          None at all. Follow'd is built for creators at every stage, whether you have 100 followers or 1 million. You can start earning from brand campaigns, sell in your Club Shop, and offer paid subscriptions from Day 1, regardless of your current audience size.
+          None at all. Followd is built for creators at every stage, whether you have 100 followers or 1 million. You can start earning from brand campaigns, sell in your Club Shop, and offer paid subscriptions from Day 1, regardless of your current audience size.
         </div>
       </div>
 
@@ -2074,21 +2161,21 @@
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          Can I use Follow'd alongside Instagram, TikTok, or YouTube?
+          Can I use Followd alongside Instagram, TikTok, or YouTube?
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Absolutely. Follow'd works alongside your existing social channels. Many creators use Instagram or TikTok to grow their audience and Follow'd to monetize them. Your Follow'd profile and Club become your home base for earning. No need to choose one or the other.
+          Absolutely. Followd works alongside your existing social channels. Many creators use Instagram or TikTok to grow their audience and Followd to monetize them. Your Followd profile and Club become your home base for earning. No need to choose one or the other.
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          What types of creators do well on Follow'd?
+          What types of creators do well on Followd?
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Creators from every niche thrive on Follow'd: fitness, fashion, gaming, art, music, cooking, finance, education, lifestyle, and more. Because Follow'd offers multiple earn streams (brand deals, subscriptions, shop, tasks, calls) there's no single "winning" niche. If you have an audience with shared interests, Follow'd works for you.
+          Creators from every niche thrive on Followd: fitness, fashion, gaming, art, music, cooking, finance, education, lifestyle, and more. Because Followd offers multiple earn streams (brand deals, subscriptions, shop, tasks, calls) there's no single "winning" niche. If you have an audience with shared interests, Followd works for you.
         </div>
       </div>
 
@@ -2108,7 +2195,7 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Yes, Follow'd has a full built-in commerce layer. Sell digital downloads (presets, guides, courses, art), physical merchandise, paid 1:1 coaching calls, classes, and event tickets — all directly through your Club Shop. You keep 90% of every sale.
+          Yes, Followd has a full built-in commerce layer. Sell digital downloads (presets, guides, courses, art), physical merchandise, paid 1:1 coaching calls, classes, and event tickets — all directly through your Club Shop. You keep 90% of every sale.
         </div>
       </div>
 
@@ -2118,7 +2205,7 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">
-          Yes, creating a Follow'd profile and launching your Club is completely free. Follow'd only takes a cut when you earn. There are no monthly fees, no setup costs, and no subscription tiers required to access the platform's core features.
+          Yes, creating a Followd profile and launching your Club is completely free. Followd only takes a cut when you earn. There are no monthly fees, no setup costs, and no subscription tiers required to access the platform's core features.
         </div>
       </div>
 
@@ -2130,18 +2217,19 @@
 <!-- ══════════════ CTA CARD ══════════════ -->
 <div class="cta-card-section reveal" id="cta">
   <div class="cta-card">
-    <div class="cta-card-logo">F</div>
+    <div class="cta-card-logo" style="background:none;padding:0;"><img src="data:image/png;base64,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" width="56" height="56" alt="Followd logo" style="display:block;border-radius:14px;"></div>
     <div style="display:inline-block;background:rgba(25,168,49,.12);color:#19A831;border:1px solid rgba(25,168,49,.3);border-radius:20px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;margin-bottom:14px;position:relative;z-index:1;">🔥 EARLY ACCESS · LIMITED SPOTS</div>
-    <h2>Start earning<br>from your<br>first post.</h2>
-    <p>Join 50,000+ creators on Follow'd. Post content, build your Club, join brand campaigns, and start getting paid today. Free to join, no follower minimum.</p>
+    <h2>0 followers<br>required.<br><em>Start earning.</em></h2>
+    <p>Join 50,000+ creators on Followd. Post content, build your Club, join brand campaigns, and start getting paid today. Free to join, no follower minimum.</p>
     <a href="#" class="cta-card-btn">Join Free, No Follower Minimum →</a>
     <div class="cta-card-sub">Free to join · iOS &amp; Android · Earn from Day 1 · No follower minimum</div>
+    <div class="cta-card-sub" style="margin-top:4px;font-size:11px;">Your content &amp; audience data are always yours — export anytime, no lock-in.</div>
   </div>
 </div>
 
 <!-- ══════════════ FOOTER ══════════════ -->
 <!-- Press Bar -->
-<div style="background:#f9fafb;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:20px 64px;">
+<div class="press-bar" style="background:#f9fafb;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:20px 64px;">
   <div class="section-inner" style="display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;">
     <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#aaa;">As seen in</div>
     <div style="font-size:15px;font-weight:800;color:#ccc;letter-spacing:-0.02em;">TechCrunch</div>
@@ -2156,8 +2244,7 @@
   <div class="footer-grid">
     <div>
       <div class="footer-brand">
-        <div class="footer-f">F</div>
-        <div class="footer-fname">Follow'd</div>
+        <img src="data:image/png;base64,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" width="30" height="30" alt="Followd logo" style="display:block;flex-shrink:0;border-radius:8px;"><img src="data:image/png;base64,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" height="18" alt="Followd" style="display:block;">
       </div>
       <p class="footer-tag">Your social feed that pays. Post content, build clubs, join brand campaigns, and earn real money.</p>
     </div>
@@ -2180,8 +2267,8 @@
       <a href="#">About Reach Labs</a>
       <a href="#">Blog</a>
       <a href="#">Careers</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms</a>
+      <a href="followd-privacy.html">Privacy Policy</a>
+      <a href="followd-terms.html">Terms of Service</a>
     </div>
   </div>
   <div class="footer-bot">
@@ -2203,26 +2290,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* ── 2. Hero entrance stagger ─────────────── */
 gsap.timeline({ defaults: { ease: 'power3.out' } })
-  .from('.hero-badge',  { y: 28, opacity: 0, duration: 0.7 })
-  .from('.hero h1',     { y: 52, opacity: 0, duration: 0.9 }, '-=0.45')
+  .from('.hero h1',     { y: 52, opacity: 0, duration: 0.9 })
   .from('.hero-sub',    { y: 32, opacity: 0, duration: 0.7 }, '-=0.55')
   .from('.hero-btns',   { y: 24, opacity: 0, duration: 0.6 }, '-=0.4')
-  .from('.hero-proof',  { y: 20, opacity: 0, duration: 0.5 }, '-=0.3')
   // Phones stagger from different Y depths
   .from('.hphone.main',  { y: 90,  opacity: 0, duration: 1.3, ease: 'power2.out' }, 0.2)
   .from('.hphone.side',  { y: 60,  opacity: 0, duration: 1.3, ease: 'power2.out' }, 0.38)
   .from('.hphone.side2', { y: 115, opacity: 0, duration: 1.3, ease: 'power2.out' }, 0.55)
-  // Add CSS float after phones appear
-  .add(() => {
-    document.querySelector('.hphone.main')  ?.classList.add('float-a');
-    document.querySelector('.hphone.side')  ?.classList.add('float-b');
-    document.querySelector('.hphone.side2') ?.classList.add('float-c');
-  }, '+=0.1');
+  ;
 
-/* ── 3. Hero phone scroll parallax ───────── */
-gsap.to('.hphone.main',  { y: '-=55', ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.2 } });
-gsap.to('.hphone.side',  { y: '-=28', ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.2 } });
-gsap.to('.hphone.side2', { y: '-=80', ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.2 } });
+/* ── 3. Hero phones — static, no parallax ───────── */
 
 /* ── 4. Scroll text color reveal (Stacked signature) ─── */
 // Large h2 headings: words fade from near-invisible gray → full black on scroll
